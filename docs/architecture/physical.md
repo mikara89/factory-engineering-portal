@@ -8,7 +8,7 @@ The target deployment uses GitHub repositories, GitHub Actions, a disposable age
 |---|---|---|
 | `mikara89/factory-engineering` | Private | Product code, architecture source, reviewed public content, public status, and a manually started portal proposal workflow. |
 | `mikara89/factory-engineering-control` | Private | Trusted workflows, approvals, ledger, checkpoint, protected verification, and recovery decisions. |
-| `mikara89/factory-engineering-portal` | Proposed public repository | Static documentation, public status, roadmap, demonstrations, updates, and GitHub Pages source. |
+| `mikara89/factory-engineering-portal` | Public | Static documentation, public status, roadmap, demonstrations, updates, and GitHub Pages source. |
 
 The portal does not read from the control repository. The product publisher App must be scoped to the portal repository. It needs `contents:write` and `pull-requests:write` to create a branch and draft PR. A portal branch ruleset must block direct App pushes to `main` and require human review. That rule is not configured in this local draft.
 
@@ -67,5 +67,7 @@ The two flows are separate. The portal proposal workflow reads only allowlisted 
 ## Pages publication
 
 When enabled, the Pages workflow will build the site from the portal repository's reviewed `main` branch. A pull request must be reviewed and merged before its content can appear on the site. The branch ruleset must prevent the publisher App from pushing directly to `main`.
+
+This review controls the Pages deployment. It does not control disclosure. The portal repository is public, so a portal branch or draft PR is visible as soon as it is pushed. A person must approve the exact public content in the private product repository before the proposal workflow pushes it.
 
 The public portal is a presentation layer. It does not call a service, start an agent, or send a command to either Factory repository.

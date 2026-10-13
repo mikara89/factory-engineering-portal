@@ -18,12 +18,15 @@ The product repository keeps the canonical, allowlisted public source. The propo
 
 The public site must not contain raw control state, checkpoints, protected tests, credentials, raw private logs, unreviewed incident evidence, private infrastructure inventory, or internal budget data.
 
+The portal repository is public. When the App pushes a branch or opens a portal PR, the files and the diff are publicly visible, also in a draft PR. For this reason, a person must approve the exact public content in the private product repository before the proposal workflow runs. The portal PR controls deployment to Pages. It does not control disclosure.
+
 The intended portal publisher App installation is limited to the portal repository. It needs `contents:write` and `pull-requests:write` to create a branch and draft PR. A portal branch ruleset must block direct App pushes to `main` and require human review. The App receives no control-repository access and cannot merge, deploy, or start engineering work. The App and branch ruleset are not configured in this local draft.
 
 ## Human decision points
 
-1. A human reviews and merges each proposed portal update.
-2. A human reviews engineering draft PRs.
-3. A human retains merge and deployment authority.
+1. A human approves the exact public content in the private product repository before it goes to the public portal repository.
+2. A human reviews and merges each portal PR. This merge controls deployment to Pages.
+3. A human reviews engineering draft PRs.
+4. A human retains merge and deployment authority.
 
 The Phase 2 evidence supports only the owner-started retained-candidate publication route. The other target boundaries still require their own qualification before later use.

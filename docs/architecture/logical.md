@@ -50,7 +50,7 @@ The public portal is outside this work flow. It presents reviewed documentation 
 
 ## Separate documentation update flow
 
-The product repository can propose a portal update from a reviewed default-branch commit. A validator checks an exact content allowlist. A deterministic preparer creates the proposed update. A portal-only publisher opens a draft PR. A person reviews and merges it. The portal does not connect to Factory Control.
+The product repository can propose a portal update from a reviewed default-branch commit. A person must approve the exact public content in the product repository first, because the portal repository is public and a portal PR is visible as soon as it opens. A validator checks an exact content allowlist. A deterministic preparer creates the proposed update. A portal-only publisher opens a draft PR. A person reviews and merges it. The portal does not connect to Factory Control.
 
 ```mermaid
 flowchart LR
