@@ -17,7 +17,7 @@ The source guide at the repository root is an IDE attachment. `.gitignore` exclu
 
 ## Presentation files
 
-The product repository exports only allowlisted Markdown and JSON content into the portal's `docs/` tree. The portal owns the presentation layer:
+The `factory-engineering` repository exports only allowlisted Markdown and JSON content into this portal's `docs/` tree. This repository owns the presentation layer:
 
 - `mkdocs.yml`: theme, navigation, and Markdown extensions.
 - `docs/stylesheets/extra.css`: colors, typography, status badges, cards, and diagram panels.
