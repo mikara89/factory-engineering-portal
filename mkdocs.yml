@@ -1,0 +1,114 @@
+site_name: Factory Engineering
+site_description: Public documentation and project status for Factory Engineering.
+docs_dir: docs
+site_dir: site
+copyright: Factory Engineering · Reviewed public documentation. People keep merge and deployment authority.
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/factory
+  favicon: assets/favicon.svg
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tooltips
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to system preference
+
+extra:
+  generator: false
+
+plugins:
+  - search
+  # Renders C4-PlantUML fences (```kroki-c4plantuml) at build time through a
+  # self-hosted Kroki server. POST saves each SVG next to its page, so the
+  # published site never calls Kroki. Never point this at the public kroki.io.
+  - kroki:
+      server_url: !ENV [KROKI_SERVER_URL, "http://localhost:8001"]
+      http_method: POST
+      tag_format: img
+      fail_fast: true
+      enable_block_diag: false
+      enable_bpmn: false
+      enable_excalidraw: false
+      enable_mermaid: false
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      title: On this page
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/diagrams.js
+
+nav:
+  - Home: index.md
+  - Guide:
+      - Overview: guide/index.md
+      - Simple guide: guide/simple-guide.md
+  - Architecture:
+      - Overview: architecture/overview.md
+      - Logical architecture: architecture/logical.md
+      - Physical architecture and deployment: architecture/physical.md
+      - Trust boundaries: architecture/security.md
+      - C4 diagrams: architecture/c4.md
+  - Project:
+      - Status: status.md
+      - Roadmap: roadmap.md
+      - Milestones: milestones/index.md
+  - Updates:
+      - "13 Oct 2026 · Phase 2 demonstration": updates/2026-10-13-phase-2-demonstration.md
+      - Phase 2 summary: demonstrations/phase-2.md
