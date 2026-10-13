@@ -39,11 +39,15 @@
   }
 
   function withNaturalWidth(source) {
-    if (/^\s*%%\{/.test(source)) return source;
-    return (
-      '%%{init: {"flowchart": {"useMaxWidth": false}, "sequence": {"useMaxWidth": false}, "c4": {"useMaxWidth": false}}}%%\n' +
-      source
-    );
+    if (/%%\{/.test(source)) return source;
+    var directive =
+      '%%{init: {"flowchart": {"useMaxWidth": false}, "sequence": {"useMaxWidth": false}, "c4": {"useMaxWidth": false}}}%%\n';
+    // A front-matter block (title, config) must stay first in the source.
+    var frontMatter = /^\s*---\r?\n[\s\S]*?\r?\n---\r?\n/.exec(source);
+    if (frontMatter) {
+      return frontMatter[0] + directive + source.slice(frontMatter[0].length);
+    }
+    return directive + source;
   }
 
   function open(source) {
