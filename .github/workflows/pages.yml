@@ -18,6 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    services:
+      # Self-hosted diagram renderer for C4-PlantUML. It runs only for the
+      # build; the published site contains the rendered SVG files.
+      kroki:
+        image: yuzutech/kroki:0.32.1@sha256:22055fcf1d088349ee18d2643bc18b7704a39d09280fdee5b1cbde7a99bd5528
+        ports:
+          - 8001:8000
+    env:
+      KROKI_SERVER_URL: http://localhost:8001
     steps:
       - name: Check out reviewed source
         uses: actions/checkout@v7
@@ -32,6 +41,17 @@ jobs:
 
       - name: Install site dependencies
         run: python -m pip install -r requirements.txt
+
+      - name: Wait for diagram renderer
+        run: |
+          for attempt in $(seq 1 30); do
+            if curl --silent --fail "$KROKI_SERVER_URL/health" > /dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Kroki did not become healthy at $KROKI_SERVER_URL" >&2
+          exit 1
 
       - name: Build and check documentation
         run: python -m mkdocs build --strict

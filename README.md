@@ -8,8 +8,22 @@ The portal is a static, read-only presentation. It does not authorize engineerin
 
 1. Create a Python environment.
 2. Install `requirements.txt`.
-3. Run `mkdocs serve` from the repository root.
-4. Open the local URL printed by MkDocs.
+3. Start the same self-hosted Kroki image used by the Pages workflow in a separate terminal:
+
+   ```powershell
+   podman run --rm --name factory-engineering-kroki -p 8001:8000 yuzutech/kroki:0.32.1@sha256:22055fcf1d088349ee18d2643bc18b7704a39d09280fdee5b1cbde7a99bd5528
+   ```
+
+4. In the first terminal, set the local Kroki URL and run MkDocs:
+
+   ```powershell
+   $env:KROKI_SERVER_URL = "http://localhost:8001"
+   .\.venv\Scripts\python.exe -m mkdocs serve
+   ```
+
+5. Open the local URL printed by MkDocs. The Kroki container renders C4 diagrams during the build. The published site contains local SVG files and does not call Kroki.
+
+Kroki uses host port 8001 because `mkdocs serve` uses port 8000. If Kroki is not running, the build fails. This stops a broken diagram from reaching the site. Do not point `KROKI_SERVER_URL` at the public kroki.io server: it would send unpublished content to a third party.
 
 Run `mkdocs build --strict` before you propose a portal update.
 
@@ -21,7 +35,7 @@ The `factory-engineering` repository exports only allowlisted Markdown and JSON 
 
 - `mkdocs.yml`: theme, navigation, and Markdown extensions.
 - `docs/stylesheets/extra.css`: colors, typography, status badges, cards, and diagram panels.
-- `docs/javascripts/diagrams.js`: the "Expand" control that opens a diagram at full size.
+- `docs/javascripts/diagrams.js`: the "Expand" control that opens a Mermaid or C4-PlantUML diagram at full size.
 - `docs/assets/favicon.svg`: the site icon.
 
 Pages can use these class groups:

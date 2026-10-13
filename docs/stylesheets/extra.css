@@ -372,6 +372,32 @@
   padding-top: 2.2rem;
 }
 
+/* Build-time diagrams (Kroki / C4-PlantUML) are SVG images on the same panel. */
+.md-typeset .fe-diagram--image {
+  padding: 2.4rem 1rem 1rem;
+  background: #f8fafc;
+  border: 1px solid var(--fe-border);
+  border-radius: var(--fe-radius);
+  overflow-x: auto;
+  text-align: center;
+}
+
+.md-typeset .fe-diagram--image > p {
+  margin: 0;
+}
+
+.md-typeset .fe-diagram--image img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.fe-diagram-dialog__body img {
+  flex: none;
+  max-width: none;
+  height: auto;
+}
+
 .md-typeset .fe-diagram__expand {
   position: absolute;
   top: 0.5rem;

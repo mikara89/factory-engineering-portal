@@ -69,6 +69,50 @@
       });
   }
 
+  function openImage(img) {
+    var view = ensureDialog();
+    var body = view.querySelector(".fe-diagram-dialog__body");
+    var copy = document.createElement("img");
+    copy.src = img.currentSrc || img.src;
+    copy.alt = img.alt;
+    if (img.naturalWidth) copy.style.width = img.naturalWidth + "px";
+    body.innerHTML = "";
+    body.appendChild(copy);
+    view.showModal();
+  }
+
+  function addExpandButton(wrapper, onExpand) {
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "fe-diagram__expand";
+    button.setAttribute("aria-label", "Expand diagram to full size");
+    button.title = "Expand diagram";
+    button.innerHTML =
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 21v-2H6.41l4.5-4.5-1.41-1.41-4.5 4.5V14H3v7zm4.5-10.09 4.5-4.5V10h2V3h-7v2h3.59l-4.5 4.5z"/></svg>' +
+      "<span>Expand</span>";
+    button.addEventListener("click", onExpand);
+    wrapper.appendChild(button);
+  }
+
+  function wrap(element, className) {
+    var wrapper = document.createElement("div");
+    wrapper.className = className;
+    element.parentNode.insertBefore(wrapper, element);
+    wrapper.appendChild(element);
+    return wrapper;
+  }
+
+  function precedingHeading(element) {
+    var node = element;
+    while (node && node.parentElement && !node.parentElement.classList.contains("md-typeset")) {
+      node = node.parentElement;
+    }
+    for (node = node && node.previousElementSibling; node; node = node.previousElementSibling) {
+      if (/^H[1-6]$/.test(node.tagName)) return node.textContent.replace(/\s*¶\s*$/, "").trim();
+    }
+    return "";
+  }
+
   function enhance() {
     // Material removes the "mermaid" class while the renderer loads, so also
     // match the bare <pre><code> that only Mermaid fences produce. Highlighted
@@ -81,23 +125,23 @@
       if (!isDiagram) return;
       if (pre.parentElement && pre.parentElement.classList.contains("fe-diagram")) return;
       var source = pre.textContent;
-      var wrapper = document.createElement("div");
-      wrapper.className = "fe-diagram";
-      pre.parentNode.insertBefore(wrapper, pre);
-      wrapper.appendChild(pre);
-
-      var button = document.createElement("button");
-      button.type = "button";
-      button.className = "fe-diagram__expand";
-      button.setAttribute("aria-label", "Expand diagram to full size");
-      button.title = "Expand diagram";
-      button.innerHTML =
-        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 21v-2H6.41l4.5-4.5-1.41-1.41-4.5 4.5V14H3v7zm4.5-10.09 4.5-4.5V10h2V3h-7v2h3.59l-4.5 4.5z"/></svg>' +
-        "<span>Expand</span>";
-      button.addEventListener("click", function () {
+      addExpandButton(wrap(pre, "fe-diagram"), function () {
         open(source);
       });
-      wrapper.appendChild(button);
+    });
+
+    // Diagrams rendered at build time by Kroki (C4-PlantUML) arrive as images.
+    var images = document.querySelectorAll('.md-typeset img[src*="kroki-generated-"]');
+    Array.prototype.forEach.call(images, function (img) {
+      if (img.closest(".fe-diagram")) return;
+      var heading = precedingHeading(img);
+      if (heading) img.alt = "Diagram: " + heading;
+      var parent = img.parentElement;
+      var target = parent && parent.tagName === "P" && parent.children.length === 1 ? parent : img;
+      var wrapper = wrap(target, "fe-diagram fe-diagram--image");
+      addExpandButton(wrapper, function () {
+        openImage(img);
+      });
     });
   }
 

@@ -49,6 +49,21 @@ theme:
 extra:
   generator: false
 
+plugins:
+  - search
+  # Renders C4-PlantUML fences (```kroki-c4plantuml) at build time through a
+  # self-hosted Kroki server. POST saves each SVG next to its page, so the
+  # published site never calls Kroki. Never point this at the public kroki.io.
+  - kroki:
+      server_url: !ENV [KROKI_SERVER_URL, "http://localhost:8001"]
+      http_method: POST
+      tag_format: img
+      fail_fast: true
+      enable_block_diag: false
+      enable_bpmn: false
+      enable_excalidraw: false
+      enable_mermaid: false
+
 markdown_extensions:
   - abbr
   - admonition
