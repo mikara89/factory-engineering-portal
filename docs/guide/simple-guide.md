@@ -4,7 +4,7 @@
   <dt>Project</dt>
   <dd><code>mikara89/factory-engineering</code></dd>
   <dt>Architecture baseline</dt>
-  <dd>v1.8</dd>
+  <dd>v1.9</dd>
   <dt>Project status reviewed</dt>
   <dd>13 October 2026</dd>
   <dt>Phase status</dt>
@@ -15,7 +15,7 @@
 
 !!! warning "Status and scope"
 
-    This guide explains the v1.8 target architecture. Its diagrams and workflow descriptions do not mean that every component is implemented or qualified. Phase 2 demonstrated a deterministic change reaching an engineering draft PR through an owner-started continuation that reused a retained verified candidate. It did not demonstrate a model call, automatic issue forwarding, one uninterrupted issue-to-PR run, merge, or deployment. The original publisher failed; its cause remains unknown. See the [public status](../status.md) for the reviewed milestone record.
+    This guide explains the v1.9 architecture. Most diagrams and workflow descriptions show the target design. They do not mean that every component is implemented or qualified. [What Phase 2 actually ran](#what-phase-2-actually-ran) shows the route that Phase 2 used. Phase 2 demonstrated a deterministic change reaching an engineering draft PR through an owner-started continuation that reused a retained verified candidate. It did not demonstrate a model call, automatic issue forwarding, one uninterrupted issue-to-PR run, merge, or deployment. The original publisher failed; its cause remains unknown. See the [public status](../status.md) for the reviewed milestone record.
 
 ---
 
@@ -135,6 +135,60 @@ sequenceDiagram
 **What if the tests fail?** The target design can start a repair attempt with the failure report. The proposed policy allows two repairs per work item. The Phase 2 demonstration did not test repair attempts.
 
 **What if the runner crashes?** Factory puts the work on **hold**. A person must confirm that everything stopped before a new attempt can start. See [section 8](#8-state-attempts-and-holds).
+
+### What Phase 2 actually ran
+
+Phase 2 did not use the full target flow above. It used a shorter route that the owner started and approved at each step. Version 1.9 of the architecture calls it the accepted Phase 2 owner route.
+
+```mermaid
+flowchart TB
+    Owner["🟡 Owner approves the issue<br/>and the exact source"] --> Intake["🟣 Trusted owner intake"]
+    Intake --> Candidate["Deterministic full-repository<br/>candidate (no model call)"]
+    Candidate --> Bundle["🟢 Immutable Git bundle"]
+    Bundle --> Verify["🟢 Protected build and<br/>endpoint checks"]
+    Verify --> Evidence["Retained verified commit<br/>and evidence"]
+    Evidence --> Approval["🟡 Separate owner<br/>publication approval"]
+    Approval --> Publisher["🔴 Trusted publisher imports<br/>the exact Git objects"]
+    Publisher --> Draft["🔵 Draft PR with the<br/>exact verified commit"]
+    CI["CI failure intake<br/>(Phase 3, pending)"] -.-> Intake
+    Live["🟠 Live AI coding<br/>(separate approval)"] -.-> Candidate
+
+    classDef source fill:#dbeafe,stroke:#2563eb,color:#0f172a;
+    classDef control fill:#ede9fe,stroke:#7c3aed,color:#1f2937;
+    classDef agent fill:#ffedd5,stroke:#ea580c,color:#431407;
+    classDef verify fill:#dcfce7,stroke:#16a34a,color:#052e16;
+    classDef publish fill:#fee2e2,stroke:#dc2626,color:#450a0a;
+    classDef infra fill:#e5e7eb,stroke:#6b7280,color:#111827;
+    classDef human fill:#fef3c7,stroke:#d97706,color:#111827;
+    classDef outside fill:#f8fafc,stroke:#94a3b8,color:#475569,stroke-dasharray: 4 3;
+
+    class Owner,Approval human;
+    class Intake control;
+    class Candidate,Evidence infra;
+    class Bundle,Verify verify;
+    class Publisher publish;
+    class Draft source;
+    class CI,Live outside;
+```
+
+The dashed inputs were not part of the demonstration.
+
+1. The owner approved one issue and the exact source commit. No forwarding workflow started the work.
+2. Factory made a deterministic change. No AI model was called.
+3. Factory froze the full repository candidate as an immutable Git bundle.
+4. The protected verifier built the candidate and passed seven endpoint checks.
+5. The original publisher job failed. The cause remains unknown.
+6. The owner approved a separate publication-only continuation. It reused the retained verified Git objects and did not rebuild them.
+7. The publisher created a draft PR. Its head is the exact verified commit. Nobody merged or deployed it.
+
+| Question | What Phase 2 shows | What it does not show |
+|---|---|---|
+| Did an AI write the change? | No. The change was deterministic. | Live AI coding quality |
+| Does a green workflow prove correctness? | The protected verifier passed although the workflow failed. | Correctness from workflow success alone |
+| Is the code merged? | The exact verified commit is in a draft PR. | Merge or deployment |
+| Did the issue start the work automatically? | The owner started intake and the publication continuation. | Automatic issue forwarding |
+| Did every phase pass as planned? | Phase 1b closed with named evidence limits. | A successful original Phase 1b run |
+| Is it ready for production? | One controlled .NET issue-to-draft-PR result | Production remediation, unattended recovery, or general runtime qualification |
 
 ---
 
@@ -280,7 +334,7 @@ From this point, everything refers to this exact commit.
 >
 > **Verification** asks: *Does the change do the correct thing?*
 
-The verifier runs the candidate application and the protected tests in **separate containers**. The tests come from the control repository. The AI cannot see or change them.
+In the target design, the verifier runs the candidate application and the protected tests in **separate containers**. The tests come from the control repository. The AI cannot see or change them.
 
 ```text
 AI changes LoginController.cs
@@ -298,6 +352,10 @@ PASS
 ```
 
 If the result is wrong, the report says **FAIL** and no PR is published.
+
+!!! note "What Phase 2 used"
+
+    In Phase 2, the verifier ran the API in one constrained, unprivileged container. Trusted host code sent seven fixed API checks and recorded the report. The two-container design above is still the proposal for live AI work.
 
 Tests that the AI writes are welcome, but they are only extra evidence. They cannot turn a FAIL into a PASS.
 
@@ -348,7 +406,7 @@ A result becomes trusted only after Factory validates it and the verifier checks
 
 ## 6. Where it runs
 
-The target proof-of-concept design runs most work on GitHub. It uses fresh GitHub-hosted runners and gives each job its own permissions. Phase 2 did not qualify this full job sequence.
+The target proof-of-concept design runs most work on GitHub. It uses fresh GitHub-hosted runners and gives each job its own permissions. Phase 2 did not qualify this full job sequence. The forwarding workflow is planned but not qualified. The accepted Phase 2 owner route did not use it.
 
 ### The jobs, in order
 
@@ -480,6 +538,8 @@ Issue #123  (work item)
 ```
 
 `factory-state` is a branch in the private control repository. Each change is a Git commit. A change is rejected if the state changed since it was read. This prevents two jobs from writing conflicting updates.
+
+The ledger and a matching checkpoint record the accepted Phase 1 and Phase 2 decisions. They do not establish full runtime qualification.
 
 Actions artifacts keep evidence for their configured retention period. Final manifests and decisions stay in Git in the target design.
 
@@ -703,7 +763,7 @@ Agent
 :   An AI program that can use tools to do engineering work, for example read files, change code and run tests.
 
 Agent runtime
-:   The program that runs the agent loop and sends tool calls to the sandbox. The v1.8 design names DeepSeek Harness as an example.
+:   The program that runs the agent loop and sends tool calls to the sandbox. The v1.9 design names DeepSeek Harness as the selected runtime.
 
 Attempt
 :   One try at a work item. A work item can have several attempts.
@@ -713,6 +773,9 @@ Broker (model broker)
 
 Candidate
 :   The exact code change that Factory wants to verify.
+
+Checkpoint
+:   A trusted record that matches the latest ledger decision. The ledger and the matching checkpoint together establish phase acceptance.
 
 Control plane (Factory Control)
 :   The trusted part that decides if work can start, what is allowed and which attempt is current.
@@ -728,6 +791,9 @@ Hold
 
 Immutable candidate
 :   A candidate that cannot change during verification. A Git commit SHA identifies it.
+
+Owner route
+:   The owner-started route that Phase 2 accepted. The owner approves intake and publication separately. It does not use automatic forwarding.
 
 Plane
 :   A part of the system with one responsibility and one trust level. It is not a separate server.
@@ -745,6 +811,9 @@ Provenance
 
 Publisher
 :   The trusted job with permission to create a branch, a draft PR and comments.
+
+Retained candidate
+:   A verified candidate whose exact Git objects Factory keeps. A later publication step can use them without rebuilding.
 
 Root of trust
 :   The part of the system that keeps the rules and the trusted state. The target design assigns this role to `factory-engineering-control`.
