@@ -143,7 +143,7 @@ sequenceDiagram
 The target design has six parts and one shared record. In the architecture documents, each part is called a **plane**. A plane is only a part with one responsibility and one trust level. It is not a separate server.
 
 ```mermaid
-flowchart LR
+flowchart TB
     subgraph P1["1 · Work sources"]
         Issue["GitHub issue"]
         CI["CI failure"]
@@ -353,7 +353,7 @@ The target proof-of-concept design runs most work on GitHub. It uses fresh GitHu
 ### The jobs, in order
 
 ```mermaid
-flowchart LR
+flowchart TB
     Issue["🔵 Issue in<br/>project repository"] --> Forward["Forwarding workflow<br/>(sends identity only)"]
     Forward --> J1["Job 1 · Prepare"]
     J1 --> J2["Job 2 · Execute"]
@@ -555,7 +555,7 @@ flowchart LR
 The target design treats alerts differently from issues. Nobody wrote acceptance criteria before an incident. For this reason, Factory asks a person twice. Phase 4 is planned; this flow has not been demonstrated.
 
 ```mermaid
-flowchart LR
+flowchart TB
     Alert["🔵 Alert episode"] --> Map["Map service and<br/>deployed version"]
     Map --> Investigate["Read-only investigation"]
     Investigate --> Plan["Plan and scope hash"]
