@@ -46,4 +46,8 @@ Pages can use these class groups:
 
 ## Publication status
 
-These files are a local draft. The public GitHub repository, Pages configuration, and publisher App are not configured. Get owner approval before publishing the content. Get separate approval before changing external settings.
+The public repository `mikara89/factory-engineering-portal` exists. GitHub Pages, the portal publisher App, and a branch ruleset for `main` are not configured.
+
+This repository is public. A branch, pull request, or diff is visible as soon as someone pushes it, also when the pull request is a draft. Approve the exact public content in the private product repository before you push it here. The portal pull request controls deployment to Pages. It does not control disclosure.
+
+Get owner approval before you merge to `main`, because the merge publishes the site. Get separate approval before you change external settings.
