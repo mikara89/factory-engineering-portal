@@ -2,24 +2,42 @@
 
 <dl class="fe-meta">
   <dt>Reviewed</dt>
-  <dd>13 October 2026</dd>
+  <dd>16 October 2026</dd>
   <dt>Current development phase</dt>
-  <dd>Phase 3 — CI diagnosis and repair</dd>
+  <dd>Phase 4 — Alert investigation and approvals</dd>
   <dt>Current status</dt>
-  <dd><span class="fe-badge fe-badge--planned">Planned</span> local proposal prepared; hosted proof and acceptance pending.</dd>
+  <dd><span class="fe-badge fe-badge--pending">In progress</span> local alert flow tested; hosted metadata qualification incomplete.</dd>
 </dl>
 
-This page summarizes approved project evidence. The private control ledger remains authoritative for execution and phase acceptance. This page publishes a short status only; it does not publish ledger events, checkpoints, protected verification material, or private logs.
+This page summarizes approved project evidence. Private control evidence governs execution. The separate owner decision records Phase 3 acceptance with limitations. This page publishes a short status only; it does not publish ledger events, checkpoints, protected verification material, or private logs.
 
 ## Current phase
 
 <div class="fe-phase fe-phase--current" markdown>
 
-### Phase 3 — CI diagnosis and repair <span class="fe-badge fe-badge--planned">Planned</span> { #phase-3 data-toc-label="Phase 3 — CI diagnosis and repair" }
+### Phase 4 — Alert investigation and approvals <span class="fe-badge fe-badge--pending">In progress</span> { #phase-4 data-toc-label="Phase 4 — Alert investigation and approvals" }
 
-**Status: Planned.** The local implementation proposal is prepared. Hosted proof and a separate acceptance decision remain pending.
+**Status: In progress.** Phase 4 acceptance remains pending.
 
-The planned work covers a supported code repair, an infrastructure diagnosis, and a qualified intermittent report. Local or simulated results do not establish hosted acceptance.
+<p class="fe-label">Completed local work</p>
+
+The synthetic alert flow links repeated notifications to one investigation and requires separate implementation and publication approvals.
+Recorded local tests passed with disposable Git candidates and state stores. GitHub APIs, SDK responses, branch pushes, and PR creation were simulated.
+Those tests exercised no live model, monitoring endpoint, or real SDK execution.
+
+<p class="fe-label">Hosted results</p>
+
+An initial metadata attempt stopped during admission before any comment observation.
+A later group passed new, edited, and restored comment observations, including authentication of preceding report archives.
+The deleted-comment observation failed.
+
+<p class="fe-label">Remaining limitations</p>
+
+- A narrow unavailable-comment correction passed local tests. Hosted requalification remains pending.
+- An unavailable comment does not prove deletion and cannot grant approval.
+- Metadata observations do not qualify the hosted engineering approval lifecycle, alert investigation, protected SDK repair, or draft PR publication.
+- Automatic event forwarding, issue creation, production telemetry, and live-model qualification remain outside the demonstrated scope.
+- No Phase 4 merge, deployment, or acceptance is claimed.
 
 </div>
 
@@ -31,6 +49,7 @@ The planned work covers a supported code repair, an infrastructure diagnosis, an
 | [1a — Synthetic pipeline](#phase-1a) | <span class="fe-badge fe-badge--accepted">Accepted</span> |
 | [1b — Live-agent engineering](#phase-1b) | <span class="fe-badge fe-badge--exception">Closed with exception</span> |
 | [2 — Issue to verified draft PR](#phase-2) | <span class="fe-badge fe-badge--limited">Accepted with limitations</span> |
+| [3 — CI diagnosis and repair](#phase-3) | <span class="fe-badge fe-badge--limited">Accepted with limitations</span> |
 
 <div class="fe-phase" markdown>
 
@@ -86,8 +105,38 @@ See the [Phase 2 update](updates/2026-10-13-phase-2-demonstration.md) for the fu
 
 </div>
 
+<div class="fe-phase" markdown>
+
+### Phase 3 — CI diagnosis and repair <span class="fe-badge fe-badge--limited">Accepted with limitations</span> { #phase-3 data-toc-label="Phase 3 — CI diagnosis and repair" }
+
+**Status: Accepted with limitations.** The owner accepted the bounded proof on 15 October 2026.
+The owner accepted the uncertain-report outcome; successful intermittent-failure classification remains unqualified.
+
+<p class="fe-label">Completed hosted work</p>
+
+- A protected verifier reproduced a real compiler failure and verified a narrow repair in one controlled .NET application profile.
+- The exact verified candidate reached a draft PR. The owner subsequently accepted and merged the repair.
+- A supported infrastructure diagnosis required no source change.
+- A comparison retained Unknown because execution conditions differed. It produced no unsupported repair.
+
+<p class="fe-label">Local checks</p>
+
+Retained-state replay checks passed locally, including a future-time check.
+Those checks do not establish new hosted execution or verification of the merged product commit.
+
+<p class="fe-label">Remaining limitations</p>
+
+- Successful intermittent-failure classification remains incomplete.
+- The proof used owner-started workflows and a deterministic repair in one controlled application profile.
+- Live-model qualification, automatic event forwarding, general autonomous remediation, and production readiness are not established.
+- No new SDK verification of the merged product commit or deployment is claimed.
+- Acceptance grants no new execution, publication, merge, or deployment authority.
+
+</div>
+
 ## Evidence links
 
-The source issue, draft pull request, and control evidence are in private repositories. They are not public links. No private control URLs are included in this status snapshot.
+The Phase 3 acceptance report and Phase 4 evidence are retained in private repositories. This page publishes reviewed outcome summaries only.
+Private issues, pull requests, workflow runs, control records, logs, and internal accounting are not exported. No private evidence URLs are included.
 
 The versioned machine-readable snapshot is available at [`data/status.json`](data/status.json). Its public field contract is in [`data/status.schema.json`](data/status.schema.json).
