@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "last_reviewed": "2026-10-13",
-  "current_development_phase": 3,
-  "current_milestone_id": "phase-3",
+  "last_reviewed": "2026-10-16",
+  "current_development_phase": 4,
+  "current_milestone_id": "phase-4",
   "milestones": [
     {
       "id": "phase-0",
@@ -54,20 +54,25 @@
     {
       "id": "phase-3",
       "title": "CI diagnosis and repair",
-      "status": "Planned",
-      "summary": "A local implementation proposal is prepared. Hosted proof and acceptance are pending.",
+      "status": "Accepted with limitations",
+      "summary": "The owner accepted the bounded Phase 3 proof on 15 October 2026. Hosted results include a verified narrow repair published as an exact draft PR, an owner-performed merge, and an infrastructure diagnosis without source changes. The uncertain-report outcome was accepted.",
       "limitations": [
-        "Local or simulated results do not establish hosted acceptance."
+        "Successful intermittent-failure classification remains unqualified. The comparison retained Unknown because execution conditions differed.",
+        "The proof used owner-started workflows, one controlled application profile, and a deterministic repair. It does not qualify live-model or general autonomous remediation.",
+        "Retained-state replay checks were local. No new SDK verification of the merged product commit or deployment is claimed."
       ],
       "evidence_links": []
     },
     {
       "id": "phase-4",
       "title": "Alert investigation and approvals",
-      "status": "Planned",
-      "summary": "Plan read-only alert investigation and separate approvals for implementation and publication.",
+      "status": "In progress",
+      "summary": "Local synthetic alert investigation and separate implementation/publication approvals have recorded passing tests with simulated APIs and SDK responses. Hosted metadata observations passed for new, edited, and restored comments, including prior-report archive authentication. Phase 4 acceptance remains pending.",
       "limitations": [
-        "No alert integration or approval flow is claimed as demonstrated."
+        "The hosted deleted-comment observation failed. A narrow unavailable-comment correction passed local tests; hosted requalification remains pending.",
+        "An unavailable comment does not prove deletion or grant approval.",
+        "Local tests do not establish hosted alert investigation, protected SDK repair, or draft PR publication. No hosted engineering approval lifecycle is qualified.",
+        "Automatic event forwarding, issue creation, production telemetry, live-model qualification, merge, and deployment remain outside the demonstrated Phase 4 scope."
       ],
       "evidence_links": []
     },
