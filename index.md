@@ -46,13 +46,27 @@ Factory Engineering is not a stand-alone AI coding agent. The agent is one untru
 
     That demonstration did not use a model call. It did not demonstrate automatic issue forwarding, one uninterrupted issue-to-PR execution, merged code, deployment, or production readiness. The source issue and draft PR are in a private repository, so this portal draft contains no public evidence link.
 
-!!! info "Phase 3 is pending."
+!!! success "Phase 3: Accepted with limitations"
 
-    A local implementation proposal is prepared. Hosted proof and acceptance remain pending.
+    The owner accepted the bounded proof on 15 October 2026. Hosted results include a verified narrow repair, exact draft PR publication, and an infrastructure diagnosis without source changes. The owner subsequently merged the repair.
+
+!!! warning "Limits of the Phase 3 result"
+
+    The uncertain-report outcome was accepted. Successful intermittent-failure classification remains unqualified because execution conditions differed. Local retained-state replay checks do not establish new SDK verification of the merged commit. No live-model qualification, general autonomous remediation, or deployment is claimed.
+
+!!! info "Phase 4: In progress"
+
+    Local synthetic alert investigation and separate implementation/publication approvals have passing recorded tests with simulated APIs and SDK responses. Hosted new, edited, and restored comment metadata observations passed, including authentication of preceding report archives. The deleted-comment observation failed.
+
+!!! warning "Limits of the Phase 4 result"
+
+    The unavailable-comment correction passed local tests and awaits hosted requalification. Metadata observations do not qualify hosted alert investigation, engineering approvals, repair, or draft PR publication. Phase 4 acceptance remains pending.
+
+See [project status](status.md) for the reviewed 16 October 2026 snapshot and remaining limitations.
 
 ## What is experimental or planned
 
-The architecture guide describes intended CI repair, alert investigation, approval, and recovery flows. Those descriptions are target architecture. They are not claims that all capabilities have passed qualification.
+The architecture guide describes CI repair, alert investigation, approval, and recovery flows. Qualification applies only to the bounded results on the status page. Broader flows remain target architecture.
 
 ## Explore
 
@@ -68,11 +82,11 @@ The architecture guide describes intended CI repair, alert investigation, approv
 
 -   :material-clipboard-check-outline: **[Project status](status.md)**
 
-    Accepted results, current limits, and the next planned phase.
+    Accepted results, current work, and remaining limitations.
 
 -   :material-map-marker-path: **[Roadmap](roadmap.md)**
 
-    Accepted, pending, planned, and future capabilities.
+    Accepted, current, and future capabilities.
 
 -   :material-play-box-outline: **[Demonstration](demonstrations/phase-2.md)**
 
