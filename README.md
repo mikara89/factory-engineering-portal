@@ -1,6 +1,6 @@
 # Factory Engineering Portal
 
-This repository contains the proposed public documentation site for Factory Engineering.
+This repository contains the public documentation site for Factory Engineering.
 
 The portal is a static, read-only presentation. It does not authorize engineering work and does not connect to the private control repository.
 
@@ -27,7 +27,7 @@ Kroki uses host port 8001 because `mkdocs serve` uses port 8000. If Kroki is not
 
 Run `mkdocs build --strict` before you propose a portal update.
 
-The source guide at the repository root is an IDE attachment. `.gitignore` excludes it. The reviewed copy is `docs/guide/simple-guide.md`.
+The reviewed guide is `docs/guide/simple-guide.md`. MkDocs reads site content from `docs/`.
 
 ## Presentation files
 
@@ -46,7 +46,9 @@ Pages can use these class groups:
 
 ## Publication status
 
-The public repository `mikara89/factory-engineering-portal` exists. GitHub Pages, the portal publisher App, and a branch ruleset for `main` are not configured.
+GitHub Pages is deployed from this repository. Public documentation originates in the private product repository, `mikara89/factory-engineering`. A manually started workflow validates the reviewed content and uses a portal-scoped publisher App to propose changes under `docs/` in a draft PR.
+
+People review and merge portal proposals. The Pages workflow builds PRs and deploys changes pushed to `main` after merge. The active `protect-portal-main` ruleset requires a PR and one approval. It has no bypass actors; the `build` check is not currently required by that ruleset.
 
 This repository is public. A branch, pull request, or diff is visible as soon as someone pushes it, also when the pull request is a draft. Approve the exact public content in the private product repository before you push it here. The portal pull request controls deployment to Pages. It does not control disclosure.
 
