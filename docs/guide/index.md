@@ -4,7 +4,7 @@
 
 !!! info "Baseline and review date"
 
-    It follows the v1.9 architecture baseline. It also shows the route that Phase 2 actually ran. The status statements were reviewed on 13 October 2026. Read the callout at the start of the [full guide](simple-guide.md) to distinguish the target design from demonstrated behavior.
+    It follows the v1.9 architecture baseline. It also shows the route that Phase 2 actually ran. The status statements were reviewed on 18 October 2026. See [project status](../status.md) for current decisions. Read the callout at the start of the [full guide](simple-guide.md) to distinguish the target design from demonstrated behavior.
 
 ## Architecture at a glance
 

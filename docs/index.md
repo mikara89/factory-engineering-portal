@@ -44,7 +44,7 @@ Factory Engineering is not a stand-alone AI coding agent. The agent is one untru
 
 !!! warning "Limits of the Phase 2 result"
 
-    That demonstration did not use a model call. It did not demonstrate automatic issue forwarding, one uninterrupted issue-to-PR execution, merged code, deployment, or production readiness. The source issue and draft PR are in a private repository, so this portal draft contains no public evidence link.
+    That demonstration did not use a model call. It did not demonstrate automatic issue forwarding, one uninterrupted issue-to-PR execution, merged code, deployment, or production readiness. The source issue and draft PR are in a private repository, so this portal contains no public evidence link.
 
 !!! success "Phase 3: Accepted with limitations"
 
@@ -86,7 +86,7 @@ The architecture guide describes CI repair, alert investigation, approval, and r
 
 -   :material-map-marker-path: **[Roadmap](roadmap.md)**
 
-    Accepted, current, and future capabilities.
+    Goals for Phase 5A and later work.
 
 -   :material-play-box-outline: **[Demonstration](demonstrations/phase-2.md)**
 

@@ -9,7 +9,7 @@
   <dd><span class="fe-badge fe-badge--limited">Accepted with limitations</span> bounded synthetic alert-to-verified-repair proof accepted with an operational timing exception.</dd>
 </dl>
 
-This page summarizes approved project evidence. Private control evidence governs execution. Separate owner decisions record Phase 3 acceptance with limitations and Phase 4 acceptance with an operational exception and validation limits. This page publishes a short status only; it does not publish ledger events, checkpoints, protected verification material, or private logs.
+This page is the main readable phase-status reference. [`data/status.json`](data/status.json) is the structured status snapshot. This page summarizes approved project evidence. Private control evidence governs execution. Separate owner decisions record Phase 3 acceptance with limitations and Phase 4 acceptance with an operational exception and validation limits. This page publishes a short status only; it does not publish ledger events, checkpoints, protected verification material, or private logs.
 
 ## Current phase
 
@@ -47,12 +47,13 @@ This page summarizes approved project evidence. Private control evidence governs
 | [1b — Live-agent engineering](#phase-1b) | <span class="fe-badge fe-badge--exception">Closed with exception</span> |
 | [2 — Issue to verified draft PR](#phase-2) | <span class="fe-badge fe-badge--limited">Accepted with limitations</span> |
 | [3 — CI diagnosis and repair](#phase-3) | <span class="fe-badge fe-badge--limited">Accepted with limitations</span> |
+| [4 — Alert investigation and approvals](#phase-4) | <span class="fe-badge fe-badge--limited">Accepted with limitations</span> |
 
 <div class="fe-phase" markdown>
 
 ### Phase 0 — Runtime and integration assessment <span class="fe-badge fe-badge--demo">Demonstrated</span> { #phase-0 data-toc-label="Phase 0 — Runtime and integration assessment" }
 
-The assessment selected GitHub Actions with pinned DeepSeek Harness for the tested configuration.
+The assessment is complete. It selected GitHub Actions with pinned DeepSeek Harness for the tested configuration. The public snapshot labels this bounded result Demonstrated.
 
 <p class="fe-label">Limitations</p>
 
