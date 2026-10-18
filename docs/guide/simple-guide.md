@@ -612,7 +612,7 @@ flowchart LR
 
 ## 10. Alerts need two approvals
 
-The target design treats alerts differently from issues. Nobody wrote acceptance criteria before an incident. For this reason, Factory asks a person twice. Phase 4 is planned; this flow has not been demonstrated.
+The target design treats alerts differently from issues. An alert alone does not authorize a repair. Factory asks a person twice. The bounded synthetic Phase 4 flow was accepted on 18 October 2026 with an operational timing exception and validation limits. Production alert integration remains unqualified. The general alert workflow remains target architecture.
 
 ```mermaid
 flowchart TB
