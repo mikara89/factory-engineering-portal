@@ -2,7 +2,7 @@
 
 <p class="fe-lead">The roadmap records approved direction. It does not promise delivery dates or completion percentages.</p>
 
-Reviewed 16 October 2026. Phase 4 is the current development phase.
+Reviewed 18 October 2026. Phase 4 is the latest accepted bounded milestone; Phase 5A remains planned.
 
 ## Current and accepted phases
 
@@ -13,15 +13,16 @@ Reviewed 16 October 2026. Phase 4 is the current development phase.
 | 1b | Demonstrate useful live-agent engineering under independent spending controls. | <span class="fe-badge fe-badge--exception">Closed with exception</span><br>Closed with an owner exception and retained limitations. |
 | 2 | Demonstrate an authorized issue-to-verified-draft-PR outcome. | <span class="fe-badge fe-badge--limited">Accepted</span><br>Accepted for the owner-started retained-candidate route. |
 | 3 | Diagnose CI failures and demonstrate bounded repair or a correct no-change diagnosis. | <span class="fe-badge fe-badge--limited">Accepted with limitations</span><br>Hosted repair and infrastructure diagnosis demonstrated; uncertain-report outcome accepted. Successful intermittent classification remains unqualified. |
-| 4 | Investigate alert episodes and require separate approvals for implementation and publication. | <span class="fe-badge fe-badge--pending">In progress</span><br>Local synthetic flow tested. Hosted new, edited, and restored comment metadata passed; deleted-comment qualification remains incomplete. |
+| 4 | Investigate alert episodes and require separate approvals for implementation and publication. | <span class="fe-badge fe-badge--limited">Accepted with limitations</span><br>Hosted synthetic repair reached an exact draft PR. The owner accepted an operational exception and validation limits. |
 
 ## Evidence and remaining work
 
 Phase 3 acceptance covers one controlled application profile, owner-started workflows, and a deterministic repair.
 The owner merged the repair after exact draft publication. Local retained-state replay checks do not establish new SDK verification of the merged commit.
 
-Phase 4 local tests use simulated APIs and SDK responses. Hosted metadata results do not qualify alert investigation, engineering approvals, repair, or draft PR publication.
-The deleted-comment observation failed; its correction passed local tests and awaits hosted requalification. Phase 4 acceptance remains pending.
+Phase 4 now demonstrates the bounded hosted synthetic alert-to-verified-repair lifecycle and exact draft publication. The owner separately approved and merged the repair.
+Acceptance carries one late-accounting operational exception and locally tested-only negative/active-cancellation cases.
+Production monitoring, general AI repair and deployment remain unqualified.
 See [project status](status.md) for the evidence boundaries and remaining limitations.
 
 ## Planned work

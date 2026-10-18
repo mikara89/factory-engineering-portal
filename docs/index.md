@@ -54,15 +54,15 @@ Factory Engineering is not a stand-alone AI coding agent. The agent is one untru
 
     The uncertain-report outcome was accepted. Successful intermittent-failure classification remains unqualified because execution conditions differed. Local retained-state replay checks do not establish new SDK verification of the merged commit. No live-model qualification, general autonomous remediation, or deployment is claimed.
 
-!!! info "Phase 4: In progress"
+!!! success "Phase 4: Accepted with limitations"
 
-    Local synthetic alert investigation and separate implementation/publication approvals have passing recorded tests with simulated APIs and SDK responses. Hosted new, edited, and restored comment metadata observations passed, including authentication of preceding report archives. The deleted-comment observation failed.
+    The owner accepted the bounded synthetic PoC on 18 October 2026. Hosted investigation, two native owner approvals, protected original reproduction and a verified one-line repair reached an exact draft PR. The owner separately approved and merged the repair.
 
 !!! warning "Limits of the Phase 4 result"
 
-    The unavailable-comment correction passed local tests and awaits hosted requalification. Metadata observations do not qualify hosted alert investigation, engineering approvals, repair, or draft PR publication. Phase 4 acceptance remains pending.
+    Acceptance carries a late-accounting operational exception. The proof uses synthetic input and deterministic repair. Full live negative/active-cancellation coverage remains unqualified despite passing local tests. No production monitoring, live-model qualification, deployment or next-phase authority is claimed.
 
-See [project status](status.md) for the reviewed 16 October 2026 snapshot and remaining limitations.
+See [project status](status.md) for the reviewed 18 October 2026 snapshot and remaining limitations.
 
 ## What is experimental or planned
 

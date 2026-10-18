@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "last_reviewed": "2026-10-16",
+  "last_reviewed": "2026-10-18",
   "current_development_phase": 4,
   "current_milestone_id": "phase-4",
   "milestones": [
@@ -66,13 +66,15 @@
     {
       "id": "phase-4",
       "title": "Alert investigation and approvals",
-      "status": "In progress",
-      "summary": "Local synthetic alert investigation and separate implementation/publication approvals have recorded passing tests with simulated APIs and SDK responses. Hosted metadata observations passed for new, edited, and restored comments, including prior-report archive authentication. Phase 4 acceptance remains pending.",
+      "status": "Accepted with limitations",
+      "summary": "The owner accepted the bounded synthetic Phase 4 PoC on 18 October 2026. Hosted investigation, two native owner approvals, protected original reproduction and a verified one-line repair reached exact draft publication. The owner separately approved and merged the repair.",
       "limitations": [
-        "The hosted deleted-comment observation failed. A narrow unavailable-comment correction passed local tests; hosted requalification remains pending.",
-        "An unavailable comment does not prove deletion or grant approval.",
-        "Local tests do not establish hosted alert investigation, protected SDK repair, or draft PR publication. No hosted engineering approval lifecycle is qualified.",
-        "Automatic event forwarding, issue creation, production telemetry, live-model qualification, merge, and deployment remain outside the demonstrated Phase 4 scope."
+        "One publication-accounting invocation missed its approved deadline. Acceptance carries this operational exception without retroactively authorizing the violation.",
+        "Synthetic input, deterministic repair and owner-started stages do not qualify production monitoring, general autonomous repair or live-model use.",
+        "Full live negative and active-cancellation coverage remains unqualified despite passing local tests.",
+        "Current comment reads do not eliminate API check-to-write races. Unavailability does not prove deletion or grant approval.",
+        "Reserved accounting allowances remain explicit in private evidence; actual billed usage is unknown.",
+        "No deployment, production remediation or next-phase authority is claimed."
       ],
       "evidence_links": []
     },

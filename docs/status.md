@@ -2,42 +2,39 @@
 
 <dl class="fe-meta">
   <dt>Reviewed</dt>
-  <dd>16 October 2026</dd>
+  <dd>18 October 2026</dd>
   <dt>Current development phase</dt>
   <dd>Phase 4 — Alert investigation and approvals</dd>
   <dt>Current status</dt>
-  <dd><span class="fe-badge fe-badge--pending">In progress</span> local alert flow tested; hosted metadata qualification incomplete.</dd>
+  <dd><span class="fe-badge fe-badge--limited">Accepted with limitations</span> bounded synthetic alert-to-verified-repair proof accepted with an operational timing exception.</dd>
 </dl>
 
-This page summarizes approved project evidence. Private control evidence governs execution. The separate owner decision records Phase 3 acceptance with limitations. This page publishes a short status only; it does not publish ledger events, checkpoints, protected verification material, or private logs.
+This page summarizes approved project evidence. Private control evidence governs execution. Separate owner decisions record Phase 3 acceptance with limitations and Phase 4 acceptance with an operational exception and validation limits. This page publishes a short status only; it does not publish ledger events, checkpoints, protected verification material, or private logs.
 
 ## Current phase
 
 <div class="fe-phase fe-phase--current" markdown>
 
-### Phase 4 — Alert investigation and approvals <span class="fe-badge fe-badge--pending">In progress</span> { #phase-4 data-toc-label="Phase 4 — Alert investigation and approvals" }
+### Phase 4 — Alert investigation and approvals <span class="fe-badge fe-badge--limited">Accepted with limitations</span> { #phase-4 data-toc-label="Phase 4 — Alert investigation and approvals" }
 
-**Status: In progress.** Phase 4 acceptance remains pending.
+**Status: Accepted with limitations.** The owner accepted the bounded synthetic PoC on 18 October 2026 with an explicit operational timing exception.
 
-<p class="fe-label">Completed local work</p>
+<p class="fe-label">Completed hosted work</p>
 
-The synthetic alert flow links repeated notifications to one investigation and requires separate implementation and publication approvals.
-Recorded local tests passed with disposable Git candidates and state stores. GitHub APIs, SDK responses, branch pushes, and PR creation were simulated.
-Those tests exercised no live model, monitoring endpoint, or real SDK execution.
-
-<p class="fe-label">Hosted results</p>
-
-An initial metadata attempt stopped during admission before any comment observation.
-A later group passed new, edited, and restored comment observations, including authentication of preceding report archives.
-The deleted-comment observation failed.
+- Native comment creation, edits, restoration and unavailability were qualified with authenticated report history.
+- Synthetic firing, repeated firing and resolved notifications updated one linked investigation; unsupported diagnosis remained Unknown without engineering authority.
+- Two distinct unedited owner comments authorized one protected repair and separate exact candidate publication.
+- Protected checks reproduced the original route failure and passed the one-line repair, with container and SDK cleanup confirmed.
+- The exact verified candidate was published as a draft PR without rebuilding. The owner separately approved and merged it.
 
 <p class="fe-label">Remaining limitations</p>
 
-- A narrow unavailable-comment correction passed local tests. Hosted requalification remains pending.
-- An unavailable comment does not prove deletion and cannot grant approval.
-- Metadata observations do not qualify the hosted engineering approval lifecycle, alert investigation, protected SDK repair, or draft PR publication.
-- Automatic event forwarding, issue creation, production telemetry, and live-model qualification remain outside the demonstrated scope.
-- No Phase 4 merge, deployment, or acceptance is claimed.
+- One publication-accounting invocation missed its approved deadline. Acceptance carries that exception without retroactively authorizing the violation.
+- The proof uses synthetic input, deterministic repair and owner-started stages; production telemetry and live-model use remain unqualified.
+- Full live negative and active-cancellation coverage remains unqualified despite passing local tests.
+- Native comment reads do not eliminate API check-to-write races. Unavailability does not prove deletion or grant approval.
+- Reserved accounting allowances remain explicit in private evidence. Actual billed usage remains unknown.
+- Merge is separate from deployment. No production remediation, unattended operation or next-phase authority is claimed.
 
 </div>
 
