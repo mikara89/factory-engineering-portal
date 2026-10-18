@@ -20,7 +20,7 @@ The public site must not contain raw control state, checkpoints, protected tests
 
 The portal repository is public. When the App pushes a branch or opens a portal PR, the files and the diff are publicly visible, also in a draft PR. For this reason, a person must approve the exact public content in the private product repository before the proposal workflow runs. The portal PR controls deployment to Pages. It does not control disclosure.
 
-The intended portal publisher App installation is limited to the portal repository. It needs `contents:write` and `pull-requests:write` to create a branch and draft PR. A portal branch ruleset must block direct App pushes to `main` and require human review. The App receives no control-repository access and cannot merge, deploy, or start engineering work. The App and branch ruleset are not configured in this local draft.
+The publication workflow requests an App token scoped to the portal repository with `contents:write` and `pull-requests:write`. The publisher creates a branch and draft PR; it does not push to `main`. The active `protect-portal-main` ruleset requires a PR and one approval, with no bypass actors. That ruleset does not currently require the `build` check. Human review controls merging and the resulting Pages deployment. These controls do not establish that App write permissions alone prevent every merge or deployment action.
 
 ## Human decision points
 

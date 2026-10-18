@@ -50,7 +50,7 @@ The public portal is outside this work flow. It presents reviewed documentation 
 
 ## Separate documentation update flow
 
-The product repository can propose a portal update from a reviewed default-branch commit. A person must approve the exact public content in the product repository first, because the portal repository is public and a portal PR is visible as soon as it opens. A validator checks an exact content allowlist. A deterministic preparer creates the proposed update. A portal-only publisher opens a draft PR. A person reviews and merges it. The portal does not connect to Factory Control.
+The deployed documentation workflow proposes a portal update from a reviewed product default-branch commit. A person must approve the exact public content in the product repository first, because the portal repository is public and a portal PR is visible as soon as it opens. A validator checks an exact content allowlist. A deterministic preparer creates the proposed update. A portal-only publisher opens a draft PR. A person reviews and merges it. The portal does not connect to Factory Control.
 
 ```mermaid
 flowchart LR
@@ -71,4 +71,4 @@ flowchart LR
     class Human,Pages human;
 ```
 
-This content flow does not authorize engineering work. The product App receives no control-repository access. The portal's `main` branch needs a ruleset that blocks direct pushes by the App and requires human review. That rule is not configured in this local draft.
+This content flow does not authorize engineering work. Its App token targets only the portal repository. The active `protect-portal-main` ruleset requires a PR and one approval, with no bypass actors. Human merging controls the subsequent Pages deployment; public disclosure occurs when the branch or PR is created.

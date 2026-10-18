@@ -2,15 +2,18 @@
 
 Reviewed 18 October 2026. Phase 4 is the latest accepted bounded milestone; later phases have not started.
 
-| Milestone | Status | Evidence and remaining limits |
-|---|---|---|
-| [Phase 3 — CI diagnosis and repair](../status.md#phase-3) | Accepted with limitations | The owner accepted the bounded hosted repair, infrastructure diagnosis, and uncertain-report outcome on 15 October 2026. Successful intermittent classification remains unqualified. |
-| [Phase 4 — Alert investigation and approvals](../status.md#phase-4) | Accepted with limitations | Hosted synthetic investigation, two native approvals, protected repair and exact draft publication demonstrated; operational exception and validation limits retained. |
+Use [project status](../status.md) for current decisions and evidence limits. The table links to each recorded milestone.
 
-The Phase 3 repair reached an exact draft PR and the owner subsequently merged it. No deployment is claimed.
-Phase 4's native metadata and positive synthetic engineering lifecycle are hosted demonstrated.
-The owner accepted the bounded proof with a late-accounting exception and locally tested-only negative/active-cancellation cases.
-The repair was separately owner-approved and merged; no production monitoring, general AI repair or deployment is claimed.
+| Milestone | Status reference |
+|---|---|
+| [Phase 0 — Runtime and integration assessment](../status.md#phase-0) | Demonstrated; assessment complete |
+| [Phase 1a — Synthetic pipeline](../status.md#phase-1a) | Accepted |
+| [Phase 1b — Live-agent engineering](../status.md#phase-1b) | Closed with exception |
+| [Phase 2 — Issue to verified draft PR](../status.md#phase-2) | Accepted with limitations |
+| [Phase 3 — CI diagnosis and repair](../status.md#phase-3) | Accepted with limitations |
+| [Phase 4 — Alert investigation and approvals](../status.md#phase-4) | Accepted with limitations; operational exception and validation limits |
+
+See the [roadmap](../roadmap.md#planned-work) for Phase 5A and later goals. Phase 5A has not started.
 
 <div class="grid cards" markdown>
 

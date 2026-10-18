@@ -6,9 +6,9 @@
   <dt>Architecture baseline</dt>
   <dd>v1.9</dd>
   <dt>Project status reviewed</dt>
-  <dd>13 October 2026</dd>
+  <dd>18 October 2026</dd>
   <dt>Phase status</dt>
-  <dd>Phase 0 complete; Phase 1a accepted and closed; Phase 1b closed with owner exception; Phase 2 accepted with limitations; Phase 3 planned</dd>
+  <dd>Phase 0 demonstrated (assessment complete); Phase 1a accepted and closed; Phase 1b closed with owner exception; Phases 2 and 3 accepted with limitations; Phase 4 accepted with an operational exception and validation limitations.</dd>
   <dt>For</dt>
   <dd>Developers, reviewers and stakeholders. You do not need a security background to read this guide.</dd>
 </dl>
@@ -150,7 +150,7 @@ flowchart TB
     Evidence --> Approval["🟡 Separate owner<br/>publication approval"]
     Approval --> Publisher["🔴 Trusted publisher imports<br/>the exact Git objects"]
     Publisher --> Draft["🔵 Draft PR with the<br/>exact verified commit"]
-    CI["CI failure intake<br/>(Phase 3, pending)"] -.-> Intake
+    CI["CI failure intake<br/>(separate phase evidence)"] -.-> Intake
     Live["🟠 Live AI coding<br/>(separate approval)"] -.-> Candidate
 
     classDef source fill:#dbeafe,stroke:#2563eb,color:#0f172a;
@@ -679,14 +679,14 @@ We add custom infrastructure only when there is a clear need.
 
 ## 12. What can change later
 
-The security model stays the same. The infrastructure around it can grow.
+The security model stays the same. The infrastructure around it can grow. The diagram groups capabilities; see [project status](../status.md) for acceptance decisions and limitations.
 
 ```mermaid
 flowchart LR
-    Now["Phase 0–2<br/>Accepted evidence varies by phase<br/>Phase 2 has stated limitations"]
-    Expanded["Phase 3–5<br/>Planned CI, alerts, evaluation<br/>Not yet accepted"]
-    Pilot["Phase 6<br/>Future limited pilot<br/>Automatic recovery proposal"]
-    Product["Phase 7+<br/>Future product expansion<br/>Optional API, UI, database, queue<br/>Several agent runtimes"]
+    Now["Runtime and engineering pipeline<br/>Assessment and bounded work"]
+    Expanded["Diagnosis and evaluation<br/>CI, alerts, same-runtime comparison"]
+    Pilot["Limited pilot<br/>Recovery and operations"]
+    Product["Product expansion<br/>Optional API, UI, database, queue<br/>Several agent runtimes"]
 
     Now --> Expanded --> Pilot --> Product
 
