@@ -1,8 +1,8 @@
 # Architecture overview
 
-Factory Engineering is a governance workflow around an AI coding agent. It separates work intake, trusted decisions, untrusted agent execution, independent verification, and publication.
+Factory Engineering controls which work an AI coding agent may do. Separate steps receive requests, check approvals, run the agent, independently test its result, and publish approved changes.
 
-The colored boxes below are logical responsibilities. They are not separate hosted services. GitHub Actions supplies workflow execution. The separate control repository stores trusted rules and durable state.
+The colored boxes below are logical responsibilities. They are not separate hosted services. GitHub Actions supplies workflow execution. The separate control repository keeps trusted rules and saved decisions. The [guide glossary](../guide/simple-guide.md#14-glossary) explains the technical names used here.
 
 ```mermaid
 flowchart TB

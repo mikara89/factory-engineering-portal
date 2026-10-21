@@ -775,7 +775,7 @@ Candidate
 :   The exact code change that Factory wants to verify.
 
 Checkpoint
-:   A trusted record that matches the latest ledger decision. The ledger and the matching checkpoint together establish phase acceptance.
+:   A separate trusted cross-check record that matches the latest decision in the permanent decision history (ledger). The matching records together establish phase acceptance.
 
 Control plane (Factory Control)
 :   The trusted part that decides if work can start, what is allowed and which attempt is current.
@@ -783,8 +783,38 @@ Control plane (Factory Control)
 Draft PR
 :   A pull request marked as a proposal. It needs human review.
 
+Decision history (ledger)
+:   The permanent, ordered record of decisions and actions. A checkpoint is a separate cross-check record.
+
 Evidence
 :   The saved records of a run, for example manifests, reports, hashes and logs.
+
+Evidence keeper (custodian)
+:   The person responsible for keeping saved records safe and checking the approved backup. This responsibility does not grant approval authority.
+
+Independent review and decision (adjudication)
+:   An independent reviewer checks a result using the agreed scoring rules and records the decision.
+
+Scoring rules (rubric)
+:   Rules used to decide whether a result is correct.
+
+Readiness testing (qualification)
+:   Checking whether something is ready for a specific use. A successful test only supports the use and scope it actually checked.
+
+Safety test for private-data exposure (canary)
+:   A test marker and procedure used to check whether protected information can reach an agent.
+
+Test data and setup (fixture)
+:   The files and conditions used for testing. Simulated (synthetic) data is created for testing rather than taken from a real incident.
+
+Fixed limits (bounded)
+:   Stated limits on time, size, cost or access.
+
+Stop when unsure (fail-closed)
+:   Do not continue when required safety or approval evidence cannot be confirmed.
+
+Required check (gate)
+:   A condition that must be met before continuing.
 
 Hold
 :   A safety state. Factory stops new attempts for a work item until a person resolves the uncertainty.
@@ -798,8 +828,8 @@ Owner route
 Plane
 :   A part of the system with one responsibility and one trust level. It is not a separate server.
 
-Provenance
-:   Information that shows exactly where an artifact came from:
+Provenance (where it came from)
+:   Information that shows the original source and recorded history of a saved file or result:
 
     ```text
     workflow run:      12345
