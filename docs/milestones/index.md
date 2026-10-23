@@ -1,6 +1,6 @@
 # Milestones
 
-Reviewed 18 October 2026. Phase 4 is the latest accepted bounded milestone; later phases have not started.
+Reviewed 23 October 2026. Phase 4 remains the latest accepted bounded milestone. Phase 5A is **Stopped — incomplete**.
 
 Use [project status](../status.md) for current decisions and evidence limits. The table links to each recorded milestone.
 
@@ -12,8 +12,10 @@ Use [project status](../status.md) for current decisions and evidence limits. Th
 | [Phase 2 — Issue to verified draft PR](../status.md#phase-2) | Accepted with limitations |
 | [Phase 3 — CI diagnosis and repair](../status.md#phase-3) | Accepted with limitations |
 | [Phase 4 — Alert investigation and approvals](../status.md#phase-4) | Accepted with limitations; operational exception and validation limits |
+| [Phase 5A — Same-runtime Factory evaluation](../status.md#phase-5a) | Stopped — incomplete; 18/20 consumed, both A1 attempts blocked |
 
-See the [roadmap](../roadmap.md#planned-work) for Phase 5A and later goals. Phase 5A has not started.
+See the [Phase 5A summary](../status.md#phase-5a) and the [roadmap](../roadmap.md#planned-work) for later goals.
+No full Phase 5A acceptance or comparative benefit is claimed.
 
 <div class="grid cards" markdown>
 

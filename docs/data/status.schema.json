@@ -26,7 +26,7 @@
           "title": { "type": "string", "minLength": 1 },
           "status": {
             "type": "string",
-            "enum": ["Planned", "In progress", "Demonstrated", "Accepted", "Accepted with limitations", "Closed with exception"]
+            "enum": ["Planned", "In progress", "Demonstrated", "Accepted", "Accepted with limitations", "Closed with exception", "Stopped — incomplete"]
           },
           "summary": { "type": "string", "minLength": 1 },
           "limitations": { "type": "array", "items": { "type": "string" } },

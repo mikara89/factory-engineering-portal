@@ -38,6 +38,12 @@ Factory Engineering is not a stand-alone AI coding agent. The agent is one untru
 
 ## Current result
 
+!!! warning "Phase 5A: Stopped — incomplete"
+
+    Eighteen of twenty original attempts were consumed. Technical feasibility was demonstrated within the tested scope, but comparative benefit over Baseline was not demonstrated. Both A1 attempts remain blocked. Further paid Phase 5A execution has stopped.
+
+    Treatment-specific actual billing and measured human effort remain UNKNOWN. This is not full Phase 5A acceptance or a production-readiness claim. Read the [evaluation summary](status.md#phase-5a).
+
 !!! success "Phase 2 is accepted with limitations."
 
     One deterministic issue produced a draft pull request with the exact verified commit. An owner-started continuation published retained candidate objects after the original publisher job failed.
@@ -62,7 +68,7 @@ Factory Engineering is not a stand-alone AI coding agent. The agent is one untru
 
     Acceptance carries a late-accounting operational exception. The proof uses synthetic input and deterministic repair. Full live negative/active-cancellation coverage remains unqualified despite passing local tests. No production monitoring, live-model qualification, deployment or next-phase authority is claimed.
 
-See [project status](status.md) for the reviewed 18 October 2026 snapshot and remaining limitations.
+See [project status](status.md) for the reviewed 23 October 2026 snapshot and remaining limitations.
 
 ## What is experimental or planned
 
@@ -86,7 +92,7 @@ The architecture guide describes CI repair, alert investigation, approval, and r
 
 -   :material-map-marker-path: **[Roadmap](roadmap.md)**
 
-    Goals for Phase 5A and later work.
+    The stopped Phase 5A evaluation and later goals.
 
 -   :material-play-box-outline: **[Demonstration](demonstrations/phase-2.md)**
 
