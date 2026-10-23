@@ -2,11 +2,11 @@
 
 <dl class="fe-meta">
   <dt>Reviewed</dt>
-  <dd>18 October 2026</dd>
+  <dd>23 October 2026</dd>
   <dt>Current development phase</dt>
-  <dd>Phase 4 — Alert investigation and approvals</dd>
+  <dd>Phase 5A — Same-runtime Factory evaluation</dd>
   <dt>Current status</dt>
-  <dd><span class="fe-badge fe-badge--limited">Accepted with limitations</span> bounded synthetic alert-to-verified-repair proof accepted with an operational timing exception.</dd>
+  <dd><span class="fe-badge fe-badge--pending">Stopped — incomplete</span> technical feasibility demonstrated within scope; comparative benefit not demonstrated.</dd>
 </dl>
 
 This page is the main readable phase-status reference. [`data/status.json`](data/status.json) is the structured status snapshot. This page summarizes approved project evidence. Private control evidence governs execution. Separate owner decisions record Phase 3 acceptance with limitations and Phase 4 acceptance with an operational exception and validation limits. This page publishes a short status only; it does not publish ledger events, checkpoints, protected verification material, or private logs.
@@ -15,26 +15,44 @@ This page is the main readable phase-status reference. [`data/status.json`](data
 
 <div class="fe-phase fe-phase--current" markdown>
 
-### Phase 4 — Alert investigation and approvals <span class="fe-badge fe-badge--limited">Accepted with limitations</span> { #phase-4 data-toc-label="Phase 4 — Alert investigation and approvals" }
+### Phase 5A — Same-runtime Factory evaluation <span class="fe-badge fe-badge--pending">Stopped — incomplete</span> { #phase-5a data-toc-label="Phase 5A — Same-runtime Factory evaluation" }
 
-**Status: Accepted with limitations.** The owner accepted the bounded synthetic PoC on 18 October 2026 with an explicit operational timing exception.
+**Status: Stopped — incomplete.** Further paid Phase 5A execution has stopped.
+The evaluation tested whether Factory produced better engineering outcomes than a basic Baseline run using the same selected runtime.
 
-<p class="fe-label">Completed hosted work</p>
+<p class="fe-label">What the evaluation showed</p>
 
-- Native comment creation, edits, restoration and unavailability were qualified with authenticated report history.
-- Synthetic firing, repeated firing and resolved notifications updated one linked investigation; unsupported diagnosis remained Unknown without engineering authority.
-- Two distinct unedited owner comments authorized one protected repair and separate exact candidate publication.
-- Protected checks reproduced the original route failure and passed the one-line repair, with container and SDK cleanup confirmed.
-- The exact verified candidate was published as a draft PR without rebuilding. The owner separately approved and merged it.
+Technical feasibility was demonstrated within the tested scope: the operator-local route collected results, ran protected checks and recorded cleanup.
+Feasibility shows that the tested workflow can run. Comparative value requires evidence that its added work produces worthwhile improvements.
+Factory's comparative benefit over Baseline was not demonstrated.
 
-<p class="fe-label">Remaining limitations</p>
+| Original evaluation accounting | Attempts |
+|---|---:|
+| Planned | 20 |
+| Consumed, including rejected or invalid outputs | 18 |
+| Linked CORRECT outcomes | 15 |
+| C2 collection rejections | 2 |
+| I2 Factory INVALID_OUTPUT | 1 |
+| A1 blocked and unexecuted | 2 |
 
-- One publication-accounting invocation missed its approved deadline. Acceptance carries that exception without retroactively authorizing the violation.
-- The proof uses synthetic input, deterministic repair and owner-started stages; production telemetry and live-model use remain unqualified.
-- Full live negative and active-cancellation coverage remains unqualified despite passing local tests.
-- Native comment reads do not eliminate API check-to-write races. Unavailability does not prove deletion or grant approval.
-- Reserved accounting allowances remain explicit in private evidence. Actual billed usage remains unknown.
-- Merge is separate from deployment. No production remediation, unattended operation or next-phase authority is claimed.
+CORRECT outcomes come from protected technical checks, recorded human scoring, or both, according to the task.
+Human scoring used owner self-review with fixture-author overlap. Independent human review is not claimed.
+
+The six completed **flat-json-v2** pairs produced six CORRECT outcomes for each treatment.
+Here, flat-json-v2 names the revised shared output-format instructions used for those pairs.
+The earlier **v1** group remains separate. The overall counts do not form one comparable performance group.
+Supplemental C2 **v2/v2.1** experiments remain separate and do not replace original outcomes.
+
+<p class="fe-label">Why execution stopped</p>
+
+The available evidence did not demonstrate benefit that justified further paid execution or Factory's added complexity.
+Original-cohort and treatment-specific actual billed costs remain **UNKNOWN**. Measured human engineering effort also remains **UNKNOWN**.
+Comparative cost and human-effort acceptance thresholds cannot be assessed as PASS.
+A1's required independent review and implementation approval remain unmet. Neither A1 attempt ran, and neither counts as an observed failure.
+An approved scheduling exception allowed A2 and A3 to proceed while A1 remained blocked.
+
+Phase 5A remains incomplete. No full acceptance, production readiness, general autonomous remediation or proven productivity improvement is claimed.
+Historical evidence and outcomes are preserved. Any follow-up evaluation needs a separate decision.
 
 </div>
 
@@ -129,6 +147,31 @@ Those checks do not establish new hosted execution or verification of the merged
 - Live-model qualification, automatic event forwarding, general autonomous remediation, and production readiness are not established.
 - No new SDK verification of the merged product commit or deployment is claimed.
 - Acceptance grants no new execution, publication, merge, or deployment authority.
+
+</div>
+
+<div class="fe-phase" markdown>
+
+### Phase 4 — Alert investigation and approvals <span class="fe-badge fe-badge--limited">Accepted with limitations</span> { #phase-4 data-toc-label="Phase 4 — Alert investigation and approvals" }
+
+**Status: Accepted with limitations.** The owner accepted the bounded synthetic PoC on 18 October 2026 with an explicit operational timing exception.
+
+<p class="fe-label">Completed hosted work</p>
+
+- Native comment creation, edits, restoration and unavailability were qualified with authenticated report history.
+- Synthetic firing, repeated firing and resolved notifications updated one linked investigation; unsupported diagnosis remained Unknown without engineering authority.
+- Two distinct unedited owner comments authorized one protected repair and separate exact candidate publication.
+- Protected checks reproduced the original route failure and passed the one-line repair, with container and SDK cleanup confirmed.
+- The exact verified candidate was published as a draft PR without rebuilding. The owner separately approved and merged it.
+
+<p class="fe-label">Remaining limitations</p>
+
+- One publication-accounting invocation missed its approved deadline. Acceptance carries that exception without retroactively authorizing the violation.
+- The proof uses synthetic input, deterministic repair and owner-started stages; production telemetry and live-model use remain unqualified.
+- Full live negative and active-cancellation coverage remains unqualified despite passing local tests.
+- Native comment reads do not eliminate API check-to-write races. Unavailability does not prove deletion or grant approval.
+- Reserved accounting allowances remain explicit in private evidence. Actual billed usage remains unknown.
+- Merge is separate from deployment. No production remediation, unattended operation or next-phase authority is claimed.
 
 </div>
 

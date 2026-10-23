@@ -2,16 +2,23 @@
 
 <p class="fe-lead">The roadmap records approved direction. It does not promise delivery dates or completion percentages.</p>
 
-Reviewed 18 October 2026. Phase 4 is the latest accepted bounded milestone; Phase 5A remains planned.
+Reviewed 23 October 2026. Phase 5A is **Stopped — incomplete**. Phase 4 remains the latest accepted bounded milestone.
 
 See [project status](status.md) for current decisions, accepted results, historical exceptions, and evidence limits.
 The [structured snapshot](data/status.json) records the same phase status.
+
+## Phase 5A — Stopped — incomplete
+
+Further paid Phase 5A execution has stopped. Eighteen of twenty original attempts were consumed; both A1 attempts remain blocked and unexecuted.
+Technical feasibility was demonstrated within the tested scope. Comparative benefit over Baseline was not demonstrated.
+Treatment-specific actual billing and measured human effort remain UNKNOWN. Full Phase 5A acceptance is not claimed.
+See the [evaluation summary](status.md#phase-5a) for outcomes, separate protocol groups and review limits.
+Any follow-up requires a separate decision. Later phases remain planned; this update does not authorize their execution.
 
 ## Planned work
 
 | Phase | Goal | Planned evidence |
 |---|---|---|
-| 5A | Compare Factory with a basic run of the same runtime. | Reviewed fixtures, protected checks, reported outcomes, costs, and interventions. This is an exploratory comparison. |
 | 5B | Optionally evaluate a second runtime. | Shared task and acceptance contracts. This phase is optional. |
 | 6 | Prepare a limited pilot and qualify recovery and operations. | Recovery, retention, access, publication reconciliation, and integration-health evidence. |
 | 7 | Expand the product based on pilot needs. | A separately prioritized and estimated scope. |

@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "last_reviewed": "2026-10-18",
-  "current_development_phase": 4,
-  "current_milestone_id": "phase-4",
+  "last_reviewed": "2026-10-23",
+  "current_development_phase": 5,
+  "current_milestone_id": "phase-5a",
   "milestones": [
     {
       "id": "phase-0",
@@ -81,10 +81,15 @@
     {
       "id": "phase-5a",
       "title": "Same-runtime Factory evaluation",
-      "status": "Planned",
-      "summary": "Plan an exploratory comparison using the same runtime and approved fixtures.",
+      "status": "Stopped — incomplete",
+      "summary": "Technical feasibility was demonstrated within the tested scope. Comparative benefit over Baseline was not demonstrated. Further paid Phase 5A execution has stopped. The evaluation remains incomplete: 18 of 20 original attempts were consumed; both A1 attempts remain blocked and unexecuted.",
       "limitations": [
-        "No evaluation result is available."
+        "Fifteen original attempts have linked CORRECT outcomes. Two C2 attempts were collection rejections; one I2 Factory attempt produced INVALID_OUTPUT.",
+        "The six completed flat-json-v2 pairs produced six CORRECT outcomes per treatment. Original v1 and flat-json-v2 groups remain separate; supplemental C2 pilots do not replace original outcomes.",
+        "Human scoring used owner self-review with fixture-author overlap. Independent human review is not claimed.",
+        "Original-cohort and treatment-specific actual billed costs and measured human engineering effort remain UNKNOWN. Comparative cost and human-effort thresholds are not established as PASS.",
+        "A1 review and implementation-approval requirements remain unmet. An approved scheduling exception allowed A2 and A3 to proceed while A1 stayed blocked.",
+        "The exploratory result does not establish full Phase 5A acceptance, production readiness, general autonomous remediation or proven productivity improvements."
       ],
       "evidence_links": []
     },
