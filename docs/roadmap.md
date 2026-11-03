@@ -2,10 +2,22 @@
 
 <p class="fe-lead">The roadmap records approved direction. It does not promise delivery dates or completion percentages.</p>
 
-Reviewed 23 October 2026. Phase 5A is **Stopped — incomplete**. Phase 4 remains the latest accepted bounded milestone.
+Reviewed 2 November 2026. Current work is the MVP control plane. MVP Demo v1 was recorded on 2 November 2026.
 
-See [project status](status.md) for current decisions, accepted results, historical exceptions, and evidence limits.
-The [structured snapshot](data/status.json) records the same phase status.
+See [project status](status.md#mvp) for each MVP milestone, accepted results, historical exceptions, and evidence limits.
+The [structured snapshot](data/status.json) records the status of Phases 0 to 7.
+
+## MVP — remaining work
+
+| Milestone | Goal | Open evidence |
+|---|---|---|
+| M5e — Advisory judge | Finish the judge and demonstrate independent and assisted review. | Calibration, score agreement, and benefit are not accepted. |
+| M5d — Runtimes and comparison | Complete the equivalent-task comparison of coding runtimes. | The recorded comparison has few samples and agent scores. |
+| M2b — QA agent | Decide on generated acceptance tests. | The benefit of QA is not compared. |
+| M5b — Benchmark | Revisit the owner-operated time comparison after the MVP. | Time savings are not established. |
+| M5f — Improvement experiment | Run a measured, bounded self-improvement experiment. | Not started. |
+
+Each live model call needs a separate owner approval with a numeric budget. This roadmap grants no execution, spending, publication, merge, or deployment approval.
 
 ## Phase 5A — Stopped — incomplete
 

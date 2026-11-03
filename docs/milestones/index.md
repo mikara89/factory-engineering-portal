@@ -1,10 +1,10 @@
 # Milestones
 
-Reviewed 23 October 2026. Phase 4 remains the latest accepted bounded milestone. Phase 5A is **Stopped — incomplete**.
+Reviewed 2 November 2026. Current work is the MVP control plane. See the [MVP milestones](../status.md#mvp) and the [MVP Demo v1 update](../updates/2026-11-02-mvp-demo-v1.md).
 
-Use [project status](../status.md) for current decisions and evidence limits. The table links to each recorded milestone.
+Use [project status](../status.md) for current decisions and evidence limits. The table below links to each earlier phase.
 
-| Milestone | Status reference |
+| Earlier phase | Status reference |
 |---|---|
 | [Phase 0 — Runtime and integration assessment](../status.md#phase-0) | Demonstrated; assessment complete |
 | [Phase 1a — Synthetic pipeline](../status.md#phase-1a) | Accepted |

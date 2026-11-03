@@ -10,9 +10,9 @@ hide:
 
 # Factory Engineering
 
-<p class="fe-lead">Factory Engineering is a governed workflow for engineering work with AI agents. It checks what work may start, limits the agent's access, and verifies a fixed candidate before it can be proposed as a draft pull request.</p>
+<p class="fe-lead">Factory Engineering is a governed workflow for engineering work with AI agents. The MVP is a control plane that takes an approved request to a verified draft pull request. People approve the work, review the result, and keep merge authority.</p>
 
-[Read the simple guide](guide/simple-guide.md){ .md-button .md-button--primary }
+[Watch the MVP demo](updates/2026-11-02-mvp-demo-v1.md){ .md-button .md-button--primary }
 [See project status](status.md){ .md-button }
 
 </div>
@@ -21,82 +21,79 @@ The engineering problem is trust. An AI agent can make a useful change, but its 
 
 Factory separates agent work from trusted checks. People keep authority to review, merge, and deploy.
 
-## What Factory does
+## MVP Demo v1
+
+Two recorded videos show the MVP on a small demo app with one deliberate bug. A label on each shot says whether it is live, a recorded real run, or a scripted safety test.
+
+### Part 1 — From an issue to a verified draft pull request
+
+Three use cases: a successful run, a review that requests changes, and a scripted change outside the allowed paths that Factory refuses.
+
+<video controls preload="metadata" style="width:100%" poster="https://github.com/mikara89/factory-engineering-portal/releases/download/demo-v1-2026-11-02/factory-demo-v1-part1-poster.png" src="https://github.com/mikara89/factory-engineering-portal/releases/download/demo-v1-2026-11-02/factory-demo-v1-part1.mp4"></video>
+
+### Part 2 — Experiments, scores, and the advisory judge
+
+How two runs of the same task are compared, and how a second model gives advice after the review scores are locked.
+
+<video controls preload="metadata" style="width:100%" poster="https://github.com/mikara89/factory-engineering-portal/releases/download/demo-v1-2026-11-02/factory-demo-v1-part2-poster.png" src="https://github.com/mikara89/factory-engineering-portal/releases/download/demo-v1-2026-11-02/factory-demo-v1-part2.mp4"></video>
+
+Read the [Demo v1 update](updates/2026-11-02-mvp-demo-v1.md) for each step and for the limits of the demo.
+
+## What the MVP does
 
 <div class="fe-steps" markdown>
 
-1. Receives an authorized work request.
-2. Gives an agent a bounded task and an isolated work area.
-3. Freezes the proposed change as an immutable candidate.
-4. Runs independent checks against that exact candidate.
-5. Allows a trusted publisher to create a draft pull request after the required checks and approvals.
-6. Retains evidence so a reviewer can understand the result.
+1. Imports a GitHub issue as a work item. Intake stays manual.
+2. Lets a triage agent draft a work request with requirements, checks, and allowed paths. The owner approves the request.
+3. Shows the exact attempt, base commit, and money limit before each live model call. The owner confirms it.
+4. Runs a coding agent in an isolated container that can change only the allowed paths.
+5. Runs the build, tests, acceptance tests, and a browser check outside the agent's control.
+6. Refuses a candidate that changes files outside the allowed paths, even when all checks pass.
+7. Gives the reviewer the diff, screenshots, and a verdict for each requirement. The reviewer scores the result and decides: approve, request changes, or reject.
+8. Starts a new attempt from the requested changes when the reviewer asks for them.
+9. Opens a draft pull request with exactly the verified files after approval. Nothing merges by itself.
 
 </div>
 
-Factory Engineering is not a stand-alone AI coding agent. The agent is one untrusted part of a wider workflow. Trusted control, verification, and publication remain outside the agent's workspace.
+The MVP also compares runs in experiments and offers an advisory judge. The judge gives advice only. It never decides a requirement, approves a run, or publishes a change.
 
 ## Current result
 
-!!! warning "Phase 5A: Stopped — incomplete"
+!!! success "MVP Demo v1 recorded on 2 November 2026"
 
-    Eighteen of twenty original attempts were consumed. Technical feasibility was demonstrated within the tested scope, but comparative benefit over Baseline was not demonstrated. Both A1 attempts remain blocked. Further paid Phase 5A execution has stopped.
+    The demo shows an issue reaching a verified draft pull request, a second attempt after requested changes, and a refused out-of-scope change. Read the [MVP status](status.md#mvp) for each milestone.
 
-    Treatment-specific actual billing and measured human effort remain UNKNOWN. This is not full Phase 5A acceptance or a production-readiness claim. Read the [evaluation summary](status.md#phase-5a).
+!!! warning "Limits of the MVP result"
 
-!!! success "Phase 2 is accepted with limitations."
+    The demo uses one small app with one deliberate bug. The reviews in the videos were done by Claude Code at the owner's request, not by an independent person. Time savings are not established. The experiment scores are agent scores and not blind. The judge's calibration and benefit are not accepted. No pull request in the demo was merged, and nothing was deployed.
 
-    One deterministic issue produced a draft pull request with the exact verified commit. An owner-started continuation published retained candidate objects after the original publisher job failed.
+!!! abstract "Earlier phases"
 
-!!! warning "Limits of the Phase 2 result"
-
-    That demonstration did not use a model call. It did not demonstrate automatic issue forwarding, one uninterrupted issue-to-PR execution, merged code, deployment, or production readiness. The source issue and draft PR are in a private repository, so this portal contains no public evidence link.
-
-!!! success "Phase 3: Accepted with limitations"
-
-    The owner accepted the bounded proof on 15 October 2026. Hosted results include a verified narrow repair, exact draft PR publication, and an infrastructure diagnosis without source changes. The owner subsequently merged the repair.
-
-!!! warning "Limits of the Phase 3 result"
-
-    The uncertain-report outcome was accepted. Successful intermittent-failure classification remains unqualified because execution conditions differed. Local retained-state replay checks do not establish new SDK verification of the merged commit. No live-model qualification, general autonomous remediation, or deployment is claimed.
-
-!!! success "Phase 4: Accepted with limitations"
-
-    The owner accepted the bounded synthetic PoC on 18 October 2026. Hosted investigation, two native owner approvals, protected original reproduction and a verified one-line repair reached an exact draft PR. The owner separately approved and merged the repair.
-
-!!! warning "Limits of the Phase 4 result"
-
-    Acceptance carries a late-accounting operational exception. The proof uses synthetic input and deterministic repair. Full live negative/active-cancellation coverage remains unqualified despite passing local tests. No production monitoring, live-model qualification, deployment or next-phase authority is claimed.
-
-See [project status](status.md) for the reviewed 23 October 2026 snapshot and remaining limitations.
-
-## What is experimental or planned
-
-The architecture guide describes CI repair, alert investigation, approval, and recovery flows. Qualification applies only to the bounded results on the status page. Broader flows remain target architecture.
+    Phases 0 to 5A tested the workflow with hosted runners and protected verification. Phase 5A stopped incomplete: technical feasibility was demonstrated within the tested scope, but comparative benefit over Baseline was not demonstrated. See [earlier phases](status.md#earlier-phases).
 
 ## Explore
 
 <div class="grid cards" markdown>
 
+-   :material-play-box-outline: **[MVP Demo v1](updates/2026-11-02-mvp-demo-v1.md)**
+
+    The two videos, the use cases, and the limits.
+
+-   :material-clipboard-check-outline: **[Project status](status.md)**
+
+    MVP milestones, earlier phases, and remaining limitations.
+
+-   :material-map-marker-path: **[Roadmap](roadmap.md)**
+
+    The remaining MVP work and later goals.
+
 -   :material-book-open-page-variant: **[Simple Guide](guide/simple-guide.md)**
 
-    The complete Factory Engineering architecture guide in plain language.
+    The Factory Engineering architecture guide in plain language.
 
 -   :material-sitemap-outline: **[Architecture](architecture/overview.md)**
 
     Logical boundaries, deployment, trust, and C4 views.
-
--   :material-clipboard-check-outline: **[Project status](status.md)**
-
-    Accepted results, current work, and remaining limitations.
-
--   :material-map-marker-path: **[Roadmap](roadmap.md)**
-
-    The stopped Phase 5A evaluation and later goals.
-
--   :material-play-box-outline: **[Demonstration](demonstrations/phase-2.md)**
-
-    The Phase 2 engineering story and its limitations.
 
 </div>
 
