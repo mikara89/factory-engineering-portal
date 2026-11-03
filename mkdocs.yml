@@ -110,5 +110,6 @@ nav:
       - Roadmap: roadmap.md
       - Milestones: milestones/index.md
   - Updates:
+      - "2 Nov 2026 · MVP Demo v1": updates/2026-11-02-mvp-demo-v1.md
       - "13 Oct 2026 · Phase 2 demonstration": updates/2026-10-13-phase-2-demonstration.md
       - Phase 2 summary: demonstrations/phase-2.md
