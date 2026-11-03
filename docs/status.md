@@ -2,18 +2,51 @@
 
 <dl class="fe-meta">
   <dt>Reviewed</dt>
-  <dd>23 October 2026</dd>
-  <dt>Current development phase</dt>
-  <dd>Phase 5A — Same-runtime Factory evaluation</dd>
+  <dd>2 November 2026</dd>
+  <dt>Current work</dt>
+  <dd>MVP control plane</dd>
   <dt>Current status</dt>
-  <dd><span class="fe-badge fe-badge--pending">Stopped — incomplete</span> technical feasibility demonstrated within scope; comparative benefit not demonstrated.</dd>
+  <dd><span class="fe-badge fe-badge--demo">Demonstrated</span> MVP Demo v1 recorded; evaluation milestones remain open.</dd>
 </dl>
 
-This page is the main readable phase-status reference. [`data/status.json`](data/status.json) is the structured status snapshot. This page summarizes approved project evidence. Private control evidence governs execution. Separate owner decisions record Phase 3 acceptance with limitations and Phase 4 acceptance with an operational exception and validation limits. This page publishes a short status only; it does not publish ledger events, checkpoints, protected verification material, or private logs.
+This page is the main readable status reference. It summarizes approved project evidence. It does not publish private logs, protected verification material, or internal accounting.
 
-## Current phase
+[`data/status.json`](data/status.json) is the structured snapshot of Phases 0 to 7. Its schema has no MVP milestones yet, so the MVP status is on this page only.
 
-<div class="fe-phase fe-phase--current" markdown>
+## MVP
+
+The MVP is a control plane that people operate in a browser. It imports a GitHub issue, lets a triage agent draft a work request, runs a coding agent in an isolated container, runs trusted checks, and supports the review. After approval, it opens a draft pull request with exactly the verified files.
+
+Watch the [MVP Demo v1 videos](updates/2026-11-02-mvp-demo-v1.md) for a recorded example.
+
+| Milestone | Status | What it covers |
+|---|---|---|
+| M1 — Runs, triage, and browser checks | <span class="fe-badge fe-badge--accepted">Done</span> | Start runs, draft work requests, and check browser behavior. |
+| M2 — Review and evidence storage | <span class="fe-badge fe-badge--accepted">Done</span> | Review each requirement, score the result, and keep the evidence. |
+| M2b — QA agent | <span class="fe-badge fe-badge--pending">In progress</span> | Browser reports work. Generated acceptance tests are not built. |
+| M3 — GitHub | <span class="fe-badge fe-badge--accepted">Done</span> | Import an issue and, after owner approval, open a draft pull request. Intake stays manual. |
+| M4 — Daily use | <span class="fe-badge fe-badge--exception">Done with exception</span> | Closed without meeting its exit. The time-saving question moved to M5b. |
+| M5a — Feedback loop | <span class="fe-badge fe-badge--accepted">Done</span> | Real tasks reach a decided review in the browser only. |
+| M5b — Benchmark | <span class="fe-badge fe-badge--planned">Paused</span> | Time savings are not established. The comparison will be revisited after the MVP. |
+| M5c — Parts and design decisions | <span class="fe-badge fe-badge--exception">Done with exception</span> | Split a request into parts. Usability and effort measurements are deferred. |
+| M5d — Runtimes and comparison | <span class="fe-badge fe-badge--pending">In progress</span> | Several coding runtimes and blind A/B experiments work. The comparison evidence is limited. |
+| M5e — Advisory judge | <span class="fe-badge fe-badge--pending">In progress</span> | Live judge attempts work. Calibration and benefit are not accepted. |
+| M5f — Improvement experiment | <span class="fe-badge fe-badge--planned">Planned</span> | A measured, bounded self-improvement experiment. |
+
+<p class="fe-label">MVP limitations</p>
+
+- Time savings are not established.
+- The recorded experiment scores are agent scores and not blind. Independent human review is not claimed.
+- The advisory judge is not calibrated. Its advice does not decide anything.
+- Issue intake, publication, and merge stay manual. No production readiness is claimed.
+
+## Earlier phases
+
+Phases 0 to 5A tested the workflow before the MVP. Separate owner decisions record Phase 3 acceptance with limitations and Phase 4 acceptance with an operational exception and validation limits.
+
+<p class="fe-label">Last phase</p>
+
+<div class="fe-phase" markdown>
 
 ### Phase 5A — Same-runtime Factory evaluation <span class="fe-badge fe-badge--pending">Stopped — incomplete</span> { #phase-5a data-toc-label="Phase 5A — Same-runtime Factory evaluation" }
 
@@ -56,7 +89,7 @@ Historical evidence and outcomes are preserved. Any follow-up evaluation needs a
 
 </div>
 
-## Accepted and demonstrated work
+<p class="fe-label">Accepted and demonstrated phases</p>
 
 | Phase | Status |
 |---|---|
@@ -178,6 +211,7 @@ Those checks do not establish new hosted execution or verification of the merged
 ## Evidence links
 
 The Phase 3 acceptance report and Phase 4 evidence are retained in private repositories. This page publishes reviewed outcome summaries only.
+The MVP Demo v1 videos are public release files of the portal repository. The owner approved their publication on 2 November 2026. The MVP evidence records stay in private repositories.
 Private issues, pull requests, workflow runs, control records, logs, and internal accounting are not exported. No private evidence URLs are included.
 
 The versioned machine-readable snapshot is available at [`data/status.json`](data/status.json). Its public field contract is in [`data/status.schema.json`](data/status.schema.json).
