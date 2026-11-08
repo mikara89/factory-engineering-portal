@@ -4,99 +4,165 @@ hide:
   - toc
 ---
 
-<div class="fe-hero" markdown>
+<div class="fe-showcase" markdown>
 
-<span class="fe-eyebrow">Governed AI engineering</span>
+<section class="fe-showcase-intro" markdown>
 
-# Factory Engineering
+<p class="fe-showcase-eyebrow">Governed AI engineering</p>
 
-<p class="fe-lead">Factory Engineering is a governed workflow for engineering work with AI agents. The MVP is a control plane that takes an approved request to a verified draft pull request. People approve the work, review the result, and keep merge authority.</p>
+# AI writes code.<br><span>Factory makes it reviewable.</span>
 
-[Watch the MVP demo](updates/2026-11-02-mvp-demo-v1.md){ .md-button .md-button--primary }
-[See project status](status.md){ .md-button }
+<p class="fe-showcase-lead">From an approved request to a verified draft PR, with human approvals and checks outside the agent's control.</p>
 
+[Watch the real demo](updates/2026-11-02-mvp-demo-v1.md#watch-the-videos){ .md-button .md-button--primary }
+[Explore the architecture](architecture/overview.md){ .md-button }
+
+<p class="fe-showcase-promises">Manual intake <span aria-hidden="true">·</span> Explicit spending limits <span aria-hidden="true">·</span> People keep merge authority</p>
+
+</section>
+
+<figure class="fe-showcase-hero" data-showcase-hero data-asset-base="assets/showcase/">
+<div class="fe-showcase-media-bar">
+<figcaption><strong>Illustrated workflow</strong><span>Simulated content · no live execution</span></figcaption>
+<button class="fe-showcase-playback" type="button" aria-controls="factory-workflow-video" hidden>Play illustration</button>
+</div>
+<div class="fe-showcase-media">
+<picture data-showcase-picture="hero">
+<source media="(max-width: 599px) and (prefers-color-scheme: dark)" srcset="assets/showcase/dark-358-poster.png">
+<source media="(max-width: 599px)" srcset="assets/showcase/light-358-poster.png">
+<source media="(max-width: 839px) and (prefers-color-scheme: dark)" srcset="assets/showcase/dark-688-poster.png">
+<source media="(max-width: 839px)" srcset="assets/showcase/light-688-poster.png">
+<source media="(prefers-color-scheme: dark)" srcset="assets/showcase/dark-840-poster.png">
+<img src="assets/showcase/light-840-poster.png" width="840" height="540" fetchpriority="high" alt="Illustrated Factory workflow: request, plan approval, run, protected checks, review, and draft pull request.">
+</picture>
+<video id="factory-workflow-video" class="fe-showcase-loop" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+</div>
+<p class="fe-showcase-media-note">An illustration explains the workflow. Real recordings provide the evidence.</p>
+<p class="fe-showcase-media-status" aria-live="polite"></p>
+</figure>
+
+<section class="fe-showcase-features" aria-label="How Factory keeps work reviewable">
+<article class="fe-showcase-feature">
+<div class="fe-showcase-feature-copy">
+<span class="fe-showcase-kicker">Human control</span>
+<h2>Approve the work.<br>Keep the final decision.</h2>
+<p>Approve each request and live attempt. Review the result. Decide whether to merge.</p>
+</div>
+<figure>
+<picture data-showcase-picture="approval">
+<source media="(max-width: 599px) and (prefers-color-scheme: dark)" srcset="assets/showcase/approval-dark-358.png">
+<source media="(max-width: 599px)" srcset="assets/showcase/approval-light-358.png">
+<source media="(prefers-color-scheme: dark)" srcset="assets/showcase/approval-dark-560.png">
+<img loading="lazy" src="assets/showcase/approval-light-560.png" width="560" height="300" alt="Illustrated work request with an explicit approval action and limited file scope.">
+</picture>
+<figcaption>Illustration · the owner approves the scope</figcaption>
+</figure>
+</article>
+<article class="fe-showcase-feature">
+<div class="fe-showcase-feature-copy">
+<span class="fe-showcase-kicker">Protected checks</span>
+<h2>Evidence you<br>can inspect.</h2>
+<p>Build, tests, acceptance checks, and browser evidence stay outside the agent's control.</p>
+</div>
+<figure>
+<picture data-showcase-picture="checks">
+<source media="(max-width: 599px) and (prefers-color-scheme: dark)" srcset="assets/showcase/checks-dark-358.png">
+<source media="(max-width: 599px)" srcset="assets/showcase/checks-light-358.png">
+<source media="(prefers-color-scheme: dark)" srcset="assets/showcase/checks-dark-560.png">
+<img loading="lazy" src="assets/showcase/checks-light-560.png" width="560" height="300" alt="Illustrated verification results for build, unit tests, acceptance, and browser checks.">
+</picture>
+<figcaption>Illustration · passing checks support review</figcaption>
+</figure>
+</article>
+</section>
+
+<section class="fe-showcase-proof" markdown>
+
+<p class="fe-showcase-eyebrow">The proof is in the recordings</p>
+
+## Watch real Factory work
+
+Demo v1 shows a small app, a real model run, and the decisions around it. Every shot identifies live work, a recorded real run, or a scripted safety test.
+
+<div class="fe-showcase-proof-grid">
+<a class="fe-showcase-proof-card" href="updates/2026-11-02-mvp-demo-v1/#part-1-three-use-cases">
+<img loading="lazy" width="1440" height="810" src="assets/showcase/factory-demo-v1-part1-poster.png" alt="Poster for the recorded issue-to-draft-PR demonstration.">
+<span class="fe-showcase-proof-copy"><span class="fe-showcase-kicker">Demo v1 · Part 1</span><strong>From an issue to a verified draft PR</strong><span>Success · review and correction · scripted scope refusal</span><span class="fe-showcase-proof-link">Watch the workflow <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="fe-showcase-proof-card" href="updates/2026-11-02-mvp-demo-v1/#part-2-experiments-scores-and-the-advisory-judge">
+<img loading="lazy" width="1440" height="810" src="assets/showcase/factory-demo-v1-part2-poster.png" alt="Poster for the recorded experiments and advisory-judge demonstration.">
+<span class="fe-showcase-proof-copy"><span class="fe-showcase-kicker">Demo v1 · Part 2</span><strong>Compare runs and inspect advice</strong><span>Experiments · review scores · advisory judge</span><span class="fe-showcase-proof-link">Watch the comparison <span aria-hidden="true">→</span></span></span>
+</a>
 </div>
 
-The engineering problem is trust. An AI agent can make a useful change, but its own report cannot prove that the change is correct or safe to publish.
+[Read the Demo v1 evidence and limits](updates/2026-11-02-mvp-demo-v1.md){ .fe-showcase-text-link }
 
-Factory separates agent work from trusted checks. People keep authority to review, merge, and deploy.
+</section>
 
-## MVP Demo v1
+<section class="fe-showcase-detail" markdown>
 
-Two recorded videos show the MVP on a small demo app with one deliberate bug. A label on each shot says whether it is live, a recorded real run, or a scripted safety test.
+## A workflow with clear decisions
 
-### Part 1 — From an issue to a verified draft pull request
+<details markdown>
+<summary>See the complete workflow</summary>
 
-Three use cases: a successful run, a review that requests changes, and a scripted change outside the allowed paths that Factory refuses.
+1. Import a GitHub issue as a work item. Intake stays manual.
+2. Let a triage agent draft requirements, checks, and allowed paths. The owner approves the request.
+3. Check the exact attempt, base commit, and money limit before each live model call.
+4. Run the coding agent in an isolated container with limited file scope.
+5. Run build, tests, acceptance checks, and a browser check outside the agent's control.
+6. Refuse a candidate that changes files outside its allowed scope.
+7. Review the diff, screenshots, requirement verdicts, and four scores.
+8. Start a separately approved attempt when the reviewer requests changes.
+9. Open a draft PR with the verified files after approval. People decide merge and deployment.
 
-<video controls preload="metadata" style="width:100%" poster="https://github.com/mikara89/factory-engineering-portal/releases/download/demo-v1-2026-11-02/factory-demo-v1-part1-poster.png" src="https://github.com/mikara89/factory-engineering-portal/releases/download/demo-v1-2026-11-02/factory-demo-v1-part1.mp4"></video>
+</details>
 
-### Part 2 — Experiments, scores, and the advisory judge
+Factory also compares runs in experiments and offers an advisory judge. The judge gives advice only. It does not decide a requirement or approve a change.
 
-How two runs of the same task are compared, and how a second model gives advice after the review scores are locked.
+## Evidence and limits
 
-<video controls preload="metadata" style="width:100%" poster="https://github.com/mikara89/factory-engineering-portal/releases/download/demo-v1-2026-11-02/factory-demo-v1-part2-poster.png" src="https://github.com/mikara89/factory-engineering-portal/releases/download/demo-v1-2026-11-02/factory-demo-v1-part2.mp4"></video>
+The videos were recorded on 2 November 2026. Read the [MVP status](status.md#mvp) for the milestone record.
 
-Read the [Demo v1 update](updates/2026-11-02-mvp-demo-v1.md) for each step and for the limits of the demo.
+- The demo uses one small app with one deliberate bug.
+- Claude Code performed the video reviews at the owner's request. These are not independent human reviews.
+- Time savings are not established. Experiment scores are agent scores and were not blind.
+- The judge's calibration and benefit are not accepted.
+- No PR in the recorded demo was merged, and nothing was deployed.
 
-## What the MVP does
+<details markdown>
+<summary>Earlier phases</summary>
 
-<div class="fe-steps" markdown>
+Phases 0 to 5A tested the workflow with hosted runners and protected verification. Phase 5A stopped incomplete: technical feasibility was demonstrated within the tested scope, but comparative benefit over Baseline was not demonstrated. See [earlier phases](status.md#earlier-phases).
 
-1. Imports a GitHub issue as a work item. Intake stays manual.
-2. Lets a triage agent draft a work request with requirements, checks, and allowed paths. The owner approves the request.
-3. Shows the exact attempt, base commit, and money limit before each live model call. The owner confirms it.
-4. Runs a coding agent in an isolated container that can change only the allowed paths.
-5. Runs the build, tests, acceptance tests, and a browser check outside the agent's control.
-6. Refuses a candidate that changes files outside the allowed paths, even when all checks pass.
-7. Gives the reviewer the diff, screenshots, and a verdict for each requirement. The reviewer scores the result and decides: approve, request changes, or reject.
-8. Starts a new attempt from the requested changes when the reviewer asks for them.
-9. Opens a draft pull request with exactly the verified files after approval. Nothing merges by itself.
+</details>
 
-</div>
+</section>
 
-The MVP also compares runs in experiments and offers an advisory judge. The judge gives advice only. It never decides a requirement, approves a run, or publishes a change.
+<section class="fe-showcase-explore" markdown>
 
-## Current result
-
-!!! success "MVP Demo v1 recorded on 2 November 2026"
-
-    The demo shows an issue reaching a verified draft pull request, a second attempt after requested changes, and a refused out-of-scope change. Read the [MVP status](status.md#mvp) for each milestone.
-
-!!! warning "Limits of the MVP result"
-
-    The demo uses one small app with one deliberate bug. The reviews in the videos were done by Claude Code at the owner's request, not by an independent person. Time savings are not established. The experiment scores are agent scores and not blind. The judge's calibration and benefit are not accepted. No pull request in the demo was merged, and nothing was deployed.
-
-!!! abstract "Earlier phases"
-
-    Phases 0 to 5A tested the workflow with hosted runners and protected verification. Phase 5A stopped incomplete: technical feasibility was demonstrated within the tested scope, but comparative benefit over Baseline was not demonstrated. See [earlier phases](status.md#earlier-phases).
-
-## Explore
+## Explore Factory
 
 <div class="grid cards" markdown>
 
--   :material-play-box-outline: **[MVP Demo v1](updates/2026-11-02-mvp-demo-v1.md)**
+- :material-clipboard-check-outline: **[Project status](status.md)**
 
-    The two videos, the use cases, and the limits.
+    Current decisions, milestones, and limitations.
 
--   :material-clipboard-check-outline: **[Project status](status.md)**
+- :material-book-open-page-variant: **[Simple Guide](guide/simple-guide.md)**
 
-    MVP milestones, earlier phases, and remaining limitations.
+    The architecture in plain language.
 
--   :material-map-marker-path: **[Roadmap](roadmap.md)**
+- :material-sitemap-outline: **[Architecture](architecture/overview.md)**
 
-    The remaining MVP work and later goals.
+    Logical boundaries, deployment, and trust.
 
--   :material-book-open-page-variant: **[Simple Guide](guide/simple-guide.md)**
+- :material-map-marker-path: **[Roadmap](roadmap.md)**
 
-    The Factory Engineering architecture guide in plain language.
-
--   :material-sitemap-outline: **[Architecture](architecture/overview.md)**
-
-    Logical boundaries, deployment, trust, and C4 views.
+    Remaining MVP work and later goals.
 
 </div>
 
-## People keep the final decision
+</section>
 
-Factory can prepare and verify a proposal. A person reviews the draft pull request and decides whether to merge it. Deployment also remains a human decision.
+</div>

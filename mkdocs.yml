@@ -90,9 +90,11 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/showcase.css
 
 extra_javascript:
   - javascripts/diagrams.js
+  - javascripts/showcase.js
 
 nav:
   - Home: index.md
