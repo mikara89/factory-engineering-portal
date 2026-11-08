@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "recordedOn": "2026-11-08",
+  "scope": "Known-answer TaskFlow fixture; no claim of general reliability or time savings",
+  "interfaceCommit": "6f171bcf90d5a3c0a0d1791737caab3d5a92531d",
+  "scenarioBase": "6e7bc20205d1e16917a81b65fc09486a71f94be4",
+  "main": {
+    "runId": "run-20261108-062741-3eab19",
+    "mode": "real paid attempt",
+    "runtime": "claude-code",
+    "model": "deepseek-flash",
+    "rounds": 1,
+    "requirementsMet": 6,
+    "checks": {
+      "build": "passed",
+      "unitTests": {
+        "passed": 6,
+        "total": 6
+      },
+      "acceptanceTests": {
+        "passed": 4,
+        "total": 4
+      },
+      "browser": "passed",
+      "scope": "respected"
+    },
+    "regressionOnBuggyBaseline": {
+      "failed": 3,
+      "passed": 3,
+      "exit": 1
+    },
+    "triageModelCostUsd": "0.012518184",
+    "codingModelCostUsd": "0.013066812",
+    "totalSavedModelCostUsd": "0.025584996",
+    "reviewer": "Codex at the owner’s request; agent review, not independent human review",
+    "reviewScores": {
+      "correctness": 5,
+      "readability": 5,
+      "testQuality": 5,
+      "scopeDiscipline": 5
+    },
+    "humanReviewMinutes": "Unknown",
+    "publishedCandidateCommit": "7d0ddb65fd1f77d5ef1ab1c1bcf0eded8c324b46",
+    "candidatePatchSha256": "8f8c388c0960d756e1ab1acf350720683abf6dd4b455c8d2bd92aba39ac4d57a",
+    "candidateFilesMatchCapture": true,
+    "ci": "passed at published candidate commit",
+    "draftPullRequest": true,
+    "merged": false,
+    "deployed": false
+  },
+  "safety": {
+    "runId": "run-20261108-064357-cdc2e6",
+    "label": "Scripted safety test — not autonomous AI",
+    "paidModelCalls": 0,
+    "scriptedGatewayResponses": 4,
+    "savedModelCostUsd": "0",
+    "checks": {
+      "build": "passed",
+      "unitTests": {
+        "passed": 2,
+        "total": 2
+      },
+      "acceptanceTests": {
+        "passed": 4,
+        "total": 4
+      },
+      "browser": "passed"
+    },
+    "outsideScope": "README.md",
+    "result": "VerificationFailed; approval blocked; no PR created"
+  },
+  "limits": [
+    "Triage read a document describing the fix; not a blind evaluation.",
+    "Waiting time is cut.",
+    "The optional correction attempt was omitted because no correction was needed.",
+    "Displayed two-minute review timer is agent-operated interface time, not owner reading time.",
+    "Main and safety runs are distinct.",
+    "Synthetic narration; English captions provided."
+  ],
+  "media": [
+    {
+      "file": "factory-demo-v2-main-poster.png",
+      "bytes": 41464,
+      "sha256": "4e83a3f2f298dcf9f692cf8cb2012cdec7745a0f1c2392aea3c0441962f6b2ec"
+    },
+    {
+      "file": "factory-demo-v2-main.mp4",
+      "bytes": 9235164,
+      "sha256": "7e73ea2f8f03a6ac5beafc07e3f75c0ab3f59f034980556ccfb6664f0c9923b0"
+    },
+    {
+      "file": "factory-demo-v2-main.srt",
+      "bytes": 1991,
+      "sha256": "a1f63f2104844af8e8c8a35e51368a2a2a8af9b4a410f4e27ab9d7abbfd2f05e"
+    },
+    {
+      "file": "factory-demo-v2-main.vtt",
+      "bytes": 2001,
+      "sha256": "c7e7929287bb3d4ea6ec26cfc3ba2d6ab5bea6a0eec349c31f39d7be57917353"
+    },
+    {
+      "file": "factory-demo-v2-safety-poster.png",
+      "bytes": 35111,
+      "sha256": "bab48259840be9e371721cbb2203d89c09136707817393ae74006ea847914ed9"
+    },
+    {
+      "file": "factory-demo-v2-safety.mp4",
+      "bytes": 1762248,
+      "sha256": "826321d5dd6fa7bb6876ca415fd560cf8722c322635b95cba352c375dd48c433"
+    },
+    {
+      "file": "factory-demo-v2-safety.srt",
+      "bytes": 590,
+      "sha256": "46834ea296bd4f9c490cdca2074cf1ccd2fa64307e7a943aca545bdf5d879bb8"
+    },
+    {
+      "file": "factory-demo-v2-safety.vtt",
+      "bytes": 600,
+      "sha256": "d929ac2870b48e9740d9d4948227ee09ebca8d422362908d388b09878cc0fbc9"
+    }
+  ]
+}

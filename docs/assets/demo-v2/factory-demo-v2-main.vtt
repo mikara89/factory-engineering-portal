@@ -1,0 +1,73 @@
+WEBVTT
+
+1
+00:00:00.800 --> 00:00:03.584
+Factory makes AI changes reviewable.
+
+2
+00:00:06.800 --> 00:00:09.656
+This small demo app has one deliberate bug.
+
+3
+00:00:11.000 --> 00:00:16.568
+The Open list should hide completed tasks. On this known baseline, it still shows them.
+
+4
+00:00:26.067 --> 00:00:30.651
+The Board shows the work. Decisions stay on the task and run pages.
+
+5
+00:00:40.200 --> 00:00:44.808
+The request states the expected result and the files the agent may change.
+
+6
+00:00:52.467 --> 00:00:55.707
+Each live call needs its own approval and money limit.
+
+7
+00:01:06.701 --> 00:01:11.525
+The agent proposes a change. Factory records the attempt and its result.
+
+8
+00:01:13.901 --> 00:01:17.741
+This attempt passed the configured checks and stayed within scope.
+
+9
+00:01:21.334 --> 00:01:26.014
+Build, tests, acceptance checks, and browser evidence support review.
+
+10
+00:01:28.534 --> 00:01:33.550
+The new regression tests failed on the original bug and passed on the fixed candidate.
+
+11
+00:01:40.667 --> 00:01:44.819
+The reviewer compares the change with the request and records a decision.
+
+12
+00:01:52.867 --> 00:01:58.987
+Here, Codex reviewed the result at the owner's request. This is not an independent human review.
+
+13
+00:02:06.867 --> 00:02:11.811
+The owner approved this agent review. Human review minutes remain unknown.
+
+14
+00:02:18.601 --> 00:02:22.777
+Approval can lead to a draft pull request with the verified files.
+
+15
+00:02:30.601 --> 00:02:35.377
+The draft passed CI on the published commit. Merge remains a separate decision.
+
+16
+00:02:38.601 --> 00:02:44.409
+This example shows the workflow. It does not establish general reliability or time savings.
+
+17
+00:02:46.801 --> 00:02:52.609
+The triage agent read a document describing the known fix. This was not a blind evaluation.
+
+18
+00:02:55.801 --> 00:03:01.009
+The demo fix remains in a draft pull request. It was not merged or deployed.
