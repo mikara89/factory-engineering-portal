@@ -1,21 +1,17 @@
-/* Homepage only: reuse Factory's approved neutral surfaces and blue accent. */
+/* Homepage surfaces inherit the same portal tokens as every documentation page. */
 body:has(.fe-showcase) {
-  --md-primary-fg-color:#fafafa; --md-primary-bg-color:#242424; --md-primary-bg-color--light:#616161;
-  --md-accent-fg-color:#0f6cbd; --md-typeset-a-color:#0f6cbd;
-  --md-default-bg-color:#fafafa;
-  --showcase-canvas:#fafafa; --showcase-panel:#ffffff; --showcase-ink:#242424;
-  --showcase-muted:#616161; --showcase-line:#d1d1d1; --showcase-accent:#0f6cbd;
+  --showcase-canvas:var(--md-default-bg-color);
+  --showcase-panel:var(--fe-surface);
+  --showcase-ink:var(--fe-heading);
+  --showcase-muted:var(--fe-muted);
+  --showcase-line:var(--fe-border);
+  --showcase-accent:var(--md-typeset-a-color);
   --showcase-on-accent:#ffffff;
 }
 body[data-md-color-scheme='slate']:has(.fe-showcase) {
-  --md-primary-fg-color:#1f1f1f; --md-primary-bg-color:#ffffff; --md-primary-bg-color--light:#c6c6c6;
-  --md-default-bg-color:#1f1f1f; --md-accent-fg-color:#79b8ef; --md-typeset-a-color:#79b8ef;
-  --showcase-canvas:#1f1f1f; --showcase-panel:#292929; --showcase-ink:#ffffff;
-  --showcase-muted:#c6c6c6; --showcase-line:#525252; --showcase-accent:#79b8ef;
-  --showcase-on-accent:#092b4a;
+  --showcase-on-accent:var(--md-default-bg-color);
 }
-body:has(.fe-showcase) .md-tabs__item--active .md-tabs__link { box-shadow:inset 0 -2px 0 var(--showcase-accent); }
-.fe-showcase { font-family:"Segoe UI",system-ui,sans-serif; color:var(--showcase-ink); padding-bottom:24px; }
+.fe-showcase { font-family:inherit; color:var(--showcase-ink); padding-bottom:24px; }
 .md-typeset .fe-showcase h1,.md-typeset .fe-showcase h2,.md-typeset .fe-showcase h3 { color:var(--showcase-ink); }
 .fe-showcase-intro { text-align:center; padding:36px 12px 8px; max-width:900px; margin:auto; }
 .fe-showcase-eyebrow,.md-typeset .fe-showcase-eyebrow { font-size:13px; color:var(--showcase-muted); margin:0 0 16px; }
