@@ -17,13 +17,13 @@ hide:
 [Watch the real demo](updates/2026-11-08-factory-demo-v2.md#watch-the-videos){ .md-button .md-button--primary }
 [Explore the architecture](architecture/overview.md){ .md-button }
 
-<p class="fe-showcase-promises">Manual intake <span aria-hidden="true">Â·</span> Explicit spending limits <span aria-hidden="true">Â·</span> People keep merge authority</p>
+<p class="fe-showcase-promises">Manual intake <span aria-hidden="true">·</span> Explicit spending limits <span aria-hidden="true">·</span> People keep merge authority</p>
 
 </section>
 
 <figure class="fe-showcase-hero" data-showcase-hero data-asset-base="assets/showcase/">
 <div class="fe-showcase-media-bar">
-<figcaption><strong>Illustrated workflow</strong><span>Simulated content Â· no live execution</span></figcaption>
+<figcaption><strong>Illustrated workflow</strong><span>Simulated content · no live execution</span></figcaption>
 <button class="fe-showcase-playback" type="button" aria-controls="factory-workflow-video" hidden>Play illustration</button>
 </div>
 <div class="fe-showcase-media">
@@ -55,7 +55,7 @@ hide:
 <source media="(prefers-color-scheme: dark)" srcset="assets/showcase/approval-dark-560.png">
 <img loading="lazy" src="assets/showcase/approval-light-560.png" width="560" height="300" alt="Illustrated work request with an explicit approval action and limited file scope.">
 </picture>
-<figcaption>Illustration Â· the owner approves the scope</figcaption>
+<figcaption>Illustration · the owner approves the scope</figcaption>
 </figure>
 </article>
 <article class="fe-showcase-feature">
@@ -71,7 +71,7 @@ hide:
 <source media="(prefers-color-scheme: dark)" srcset="assets/showcase/checks-dark-560.png">
 <img loading="lazy" src="assets/showcase/checks-light-560.png" width="560" height="300" alt="Illustrated verification results for build, unit tests, acceptance, and browser checks.">
 </picture>
-<figcaption>Illustration Â· passing checks support review</figcaption>
+<figcaption>Illustration · passing checks support review</figcaption>
 </figure>
 </article>
 </section>
@@ -87,11 +87,11 @@ Demo v1 shows a small app, a real model run, and the decisions around it. Every 
 <div class="fe-showcase-proof-grid">
 <a class="fe-showcase-proof-card" href="updates/2026-11-02-mvp-demo-v1/#part-1-three-use-cases">
 <img loading="lazy" width="1440" height="810" src="assets/showcase/factory-demo-v1-part1-poster.png" alt="Poster for the recorded issue-to-draft-PR demonstration.">
-<span class="fe-showcase-proof-copy"><span class="fe-showcase-kicker">Demo v1 Â· Part 1</span><strong>From an issue to a verified draft PR</strong><span>Success Â· review and correction Â· scripted scope refusal</span><span class="fe-showcase-proof-link">Watch the workflow <span aria-hidden="true">â†’</span></span></span>
+<span class="fe-showcase-proof-copy"><span class="fe-showcase-kicker">Demo v1 · Part 1</span><strong>From an issue to a verified draft PR</strong><span>Success · review and correction · scripted scope refusal</span><span class="fe-showcase-proof-link">Watch the workflow <span aria-hidden="true">→</span></span></span>
 </a>
 <a class="fe-showcase-proof-card" href="updates/2026-11-02-mvp-demo-v1/#part-2-experiments-scores-and-the-advisory-judge">
 <img loading="lazy" width="1440" height="810" src="assets/showcase/factory-demo-v1-part2-poster.png" alt="Poster for the recorded experiments and advisory-judge demonstration.">
-<span class="fe-showcase-proof-copy"><span class="fe-showcase-kicker">Demo v1 Â· Part 2</span><strong>Compare runs and inspect advice</strong><span>Experiments Â· review scores Â· advisory judge</span><span class="fe-showcase-proof-link">Watch the comparison <span aria-hidden="true">â†’</span></span></span>
+<span class="fe-showcase-proof-copy"><span class="fe-showcase-kicker">Demo v1 · Part 2</span><strong>Compare runs and inspect advice</strong><span>Experiments · review scores · advisory judge</span><span class="fe-showcase-proof-link">Watch the comparison <span aria-hidden="true">→</span></span></span>
 </a>
 </div>
 
