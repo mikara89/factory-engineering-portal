@@ -1,0 +1,25 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.100
+This is a scripted safety test, not autonomous AI.
+
+2
+00:00:05.800 --> 00:00:10.000
+This fixed script also changes a file outside the allowed paths.
+
+3
+00:00:13.000 --> 00:00:16.336
+Every configured check passes, but scope does not.
+
+4
+00:00:23.167 --> 00:00:27.007
+Passing tests do not permit a change outside the approved scope.
+
+5
+00:00:29.367 --> 00:00:33.711
+Factory blocks approval, so no draft pull request can be published.
+
+6
+00:00:38.200 --> 00:00:42.664
+This is a reproducible safety test, separate from the real model run.

@@ -2,7 +2,7 @@ site_name: Factory Engineering
 site_description: Public documentation and project status for Factory Engineering.
 docs_dir: docs
 site_dir: site
-copyright: Factory Engineering · Reviewed public documentation. People keep merge and deployment authority.
+copyright: Factory Engineering Â· Reviewed public documentation. People keep merge and deployment authority.
 
 theme:
   name: material
@@ -112,6 +112,7 @@ nav:
       - Roadmap: roadmap.md
       - Milestones: milestones/index.md
   - Updates:
-      - "2 Nov 2026 · MVP Demo v1": updates/2026-11-02-mvp-demo-v1.md
-      - "13 Oct 2026 · Phase 2 demonstration": updates/2026-10-13-phase-2-demonstration.md
+      - "8 Nov 2026 · Factory Demo v2": updates/2026-11-08-factory-demo-v2.md
+      - "2 Nov 2026 Â· MVP Demo v1": updates/2026-11-02-mvp-demo-v1.md
+      - "13 Oct 2026 Â· Phase 2 demonstration": updates/2026-10-13-phase-2-demonstration.md
       - Phase 2 summary: demonstrations/phase-2.md
