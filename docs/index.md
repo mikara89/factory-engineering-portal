@@ -14,7 +14,7 @@ hide:
 
 <p class="fe-showcase-lead">From an approved request to a verified draft PR, with human approvals and checks outside the agent's control.</p>
 
-[Watch the real demo](updates/2026-11-08-factory-demo-v2.md#watch-the-videos){ .md-button .md-button--primary }
+[Watch the real demo](updates/2026-11-09-factory-demo-v3.md#watch-the-video){ .md-button .md-button--primary }
 [Explore the architecture](architecture/overview.md){ .md-button }
 
 <p class="fe-showcase-promises">Manual intake <span aria-hidden="true">·</span> Explicit spending limits <span aria-hidden="true">·</span> People keep merge authority</p>
