@@ -1,0 +1,341 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:07.196
+Factory Engineering, demo three. One real feature, from a GitHub
+issue to a draft pull request.
+
+2
+00:00:09.500 --> 00:00:15.812
+The banner on each shot says what it is: live, a saved real run,
+or an owner decision.
+
+3
+00:00:16.112 --> 00:00:25.112
+In this recording, an AI agent, called Agent, clicked every
+owner decision at the owner's request. So the review is an agent
+review.
+
+4
+00:00:28.912 --> 00:00:34.912
+Needs you is the inbox. It lists one next action for each task,
+with blocked work first.
+
+5
+00:00:36.912 --> 00:00:43.320
+These are real open items of the project, for example old
+experiment runs that still wait for a review.
+
+6
+00:00:46.912 --> 00:00:52.480
+The Board shows every task in its stage, from intake to done,
+with its warnings.
+
+7
+00:01:02.912 --> 00:01:10.256
+The new issue, number fourteen, asks for a Complete button on
+each open task, and a new API endpoint.
+
+8
+00:01:11.912 --> 00:01:17.264
+Factory lists the issues with the label factory, but it imports
+one only on request.
+
+9
+00:01:19.912 --> 00:01:22.960
+The import creates a work item. Nothing runs yet.
+
+10
+00:01:30.912 --> 00:01:36.576
+Triage turns the issue into a work request. A model reads the
+issue and the code.
+
+11
+00:01:37.912 --> 00:01:44.728
+Every paid call starts with a card: the exact conversation, and
+its money limit, here twenty cents.
+
+12
+00:01:46.912 --> 00:01:48.592
+Agent confirms the card.
+
+13
+00:01:51.912 --> 00:01:57.408
+The agent now reads files. Each file it reads becomes evidence
+for its design choice.
+
+14
+00:02:12.912 --> 00:02:19.056
+The draft has six requirements. Four are checked by tests, and
+two need a human review of the page.
+
+15
+00:02:23.912 --> 00:02:32.672
+The design assessment explains the choice: extend the feature
+folder, and add a small in-memory store, because the seed data
+must not change.
+
+16
+00:02:38.912 --> 00:02:45.728
+It lists the eighteen files that triage read. If one of them
+changes before the run, Factory blocks the run.
+
+17
+00:02:54.912 --> 00:02:59.760
+Triage suggests a design review, because the change adds a new
+interaction.
+
+18
+00:03:01.912 --> 00:03:07.216
+A new UI pattern would need a committed HTML mockup, merged
+before its approval.
+
+19
+00:03:08.912 --> 00:03:16.232
+Here the button follows the existing list pattern. So Agent
+waives the review, with a reason, on the owner's behalf.
+
+20
+00:03:26.912 --> 00:03:33.032
+The request uses the repository's allowed paths. A request can
+narrow them, but never widen them.
+
+21
+00:03:34.912 --> 00:03:40.624
+Agent approves the request. Its digest is now fixed, and Factory
+posts it on the issue.
+
+22
+00:03:48.912 --> 00:03:57.144
+Before any code is written, a separate QA agent writes
+acceptance tests from the approved request. The coding agent
+never sees them.
+
+23
+00:04:00.912 --> 00:04:05.208
+Again a card, with a limit of fifty cents. Agent confirms it.
+
+24
+00:04:09.912 --> 00:04:13.752
+Factory then runs the new tests on the unchanged base commit.
+
+25
+00:04:20.912 --> 00:04:25.712
+Eight tests. On the unchanged base, one passes and seven fail.
+
+26
+00:04:26.912 --> 00:04:32.744
+For a new feature, that is expected: the failing tests need the
+new endpoint or the new button.
+
+27
+00:04:36.912 --> 00:04:41.664
+The tests build, so the coding agent can use the interface note
+that comes with them.
+
+28
+00:04:52.845 --> 00:04:58.893
+Agent approves the test set. It becomes a protected check of the
+run, bound to its digest.
+
+29
+00:05:03.845 --> 00:05:07.205
+Keep this decision in mind. It will matter in a moment.
+
+30
+00:05:20.612 --> 00:05:25.028
+First, a real safety stop from an earlier task, issue number
+eight.
+
+31
+00:05:27.612 --> 00:05:35.220
+The agent needed files outside the allowed paths. Verification
+rejected them, and the agent stopped with a scope conflict.
+
+32
+00:05:39.612 --> 00:05:44.892
+Since then, triage and approval check the paths before any money
+is spent on a run.
+
+33
+00:05:56.612 --> 00:06:03.980
+The run card shows the exact attempt, the base commit, the
+model, the money limit, and the protected QA tests.
+
+34
+00:06:07.612 --> 00:06:09.484
+Agent confirms it.
+
+35
+00:06:12.612 --> 00:06:18.060
+Live run activity shows each step of the agent while it works.
+The waiting time is cut.
+
+36
+00:06:40.612 --> 00:06:47.380
+The first run passed the build, all unit tests, the acceptance
+tests, the UI check, and the scope check.
+
+37
+00:06:50.612 --> 00:06:53.660
+But two of the eight protected QA tests failed.
+
+38
+00:07:06.112 --> 00:07:15.448
+Here is what happened. Before the code existed, the QA agent
+wrote eight tests. On the old code, seven failed, as expected
+for a new feature.
+
+39
+00:07:15.748 --> 00:07:24.628
+In run one, the two failing tests were wrong, not the code. One
+expects two open tasks where one is correct. One cannot start
+its browser.
+
+40
+00:07:24.928 --> 00:07:31.456
+On the old code, a wrong test fails just like a correct one. So
+the check before the run could not see it.
+
+41
+00:07:33.256 --> 00:07:37.312
+This is the approved QA test set, on the work item page.
+
+42
+00:07:43.756 --> 00:07:47.740
+So Agent stops using this test set, on the owner's behalf.
+
+43
+00:07:55.256 --> 00:08:02.312
+The plan allowed one retry for a failure that a retry can fix.
+The retry runs without the defective tests.
+
+44
+00:08:06.256 --> 00:08:09.880
+The card shows the same limit, and no QA test set.
+
+45
+00:08:13.256 --> 00:08:15.128
+Agent confirms it.
+
+46
+00:08:31.256 --> 00:08:38.552
+The retry is verified in one round: build, unit tests,
+acceptance tests, the UI check, and scope.
+
+47
+00:08:42.256 --> 00:08:44.224
+It cost under three cents.
+
+48
+00:09:01.256 --> 00:09:08.912
+Now the review. Agent reviews, so the review is marked Agent.
+Agent reviews never count as owner evidence.
+
+49
+00:09:13.256 --> 00:09:19.112
+The timer started when the page opened. The reviewer reads the
+diff and the browser screenshots of the run.
+
+50
+00:09:28.256 --> 00:09:34.736
+Both page requirements are met. The scores are saved as a draft:
+five, four, four, five.
+
+51
+00:09:44.256 --> 00:09:49.656
+The review mode is independent. The Judge advice stays hidden
+until the scores are locked.
+
+52
+00:10:01.256 --> 00:10:08.168
+The Judge is a second model. It reads a fixed evidence packet of
+the run, and its advice never decides anything.
+
+53
+00:10:13.256 --> 00:10:19.232
+The preview shows the exact attempt and a maximum cost of fifty
+cents. Agent confirms it.
+
+54
+00:10:35.256 --> 00:10:41.328
+The report is selected, and the four saved scores are locked.
+Only now does the Judge advice appear.
+
+55
+00:10:48.256 --> 00:10:53.824
+The Judge proposes five, five, four, five: close to the review.
+
+56
+00:10:58.256 --> 00:11:05.120
+Each risk cites its evidence. The first one is real: a failed
+request gives the user no feedback.
+
+57
+00:11:11.256 --> 00:11:16.968
+The second one does not hold: its own evidence shows four of
+four acceptance tests passed.
+
+58
+00:11:29.256 --> 00:11:34.536
+The review is approved, after the Judge advice. Publication is a
+separate step.
+
+59
+00:11:39.256 --> 00:11:46.600
+Factory publishes a branch and a draft pull request with exactly
+the verified files. Nothing merges by itself.
+
+60
+00:11:56.256 --> 00:11:59.832
+Pull request number fifteen is open as a draft.
+
+61
+00:12:11.256 --> 00:12:18.552
+Factory reads the CI result of the exact published commit. Here,
+GitHub's build passed in forty seconds.
+
+62
+00:12:24.256 --> 00:12:31.168
+The CI value page compares CI with Factory's own verification,
+across all published pull requests.
+
+63
+00:12:49.256 --> 00:12:55.664
+And the feature itself: TaskFlow from the draft pull request
+branch, on this computer, not merged.
+
+64
+00:12:58.256 --> 00:13:04.040
+Select Complete. The task leaves the Open tab, and the numbers
+change without a page reload.
+
+65
+00:13:12.256 --> 00:13:14.512
+It now appears on the Completed tab.
+
+66
+00:13:27.256 --> 00:13:36.400
+Factory also measures itself. In a blind A/B experiment, the
+owner scored two runtimes on the same task without knowing which
+was which.
+
+67
+00:13:44.256 --> 00:13:50.880
+A replay of a merged task passes only with its hidden tests and
+the owner's review of the page requirements.
+
+68
+00:14:02.256 --> 00:14:08.544
+And Cost and effort shows every value that was not measured as
+Unknown, never as zero.
+
+69
+00:14:24.756 --> 00:14:32.148
+What this demo does not prove: one small feature is not a
+general result, and the review here is not a human review.
+
+70
+00:14:38.756 --> 00:14:46.076
+All IDs and costs are on this card. The whole demo cost thirteen
+cents of the approved two dollars and twenty cents.

@@ -112,6 +112,7 @@ nav:
       - Roadmap: roadmap.md
       - Milestones: milestones/index.md
   - Updates:
+      - "9 Nov 2026 · Factory Demo v3": updates/2026-11-09-factory-demo-v3.md
       - "8 Nov 2026 · Factory Demo v2": updates/2026-11-08-factory-demo-v2.md
       - "2 Nov 2026 Â· MVP Demo v1": updates/2026-11-02-mvp-demo-v1.md
       - "13 Oct 2026 Â· Phase 2 demonstration": updates/2026-10-13-phase-2-demonstration.md

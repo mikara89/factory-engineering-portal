@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "recordedOn": "2026-11-09",
+  "scope": "One real feature in the TaskFlow demo app (issue #14); no claim of general reliability or time savings",
+  "operator": "An AI agent, called Agent in the video, operated the control plane and clicked every owner decision at the owner's request",
+  "approvedModelBudgetUsd": "2.20",
+  "baseCommit": "acc76577d566b9ca9eb980e4a77b724d18e9fb4e",
+  "workItem": "wi-20261109-112349-3761da",
+  "approvedRequestSha256": "065ec8e8ad56e23ec4b13f6ce4cabcd01b2af63c25c2b6228694e12c4d94d58c",
+  "triage": {
+    "id": "tri-20261109-112504-7eb7bd",
+    "modelRequests": 8,
+    "modelCostUsd": "0.01530066",
+    "limitUsd": "0.20",
+    "requirements": 6,
+    "requirementsCheckedByTests": 4,
+    "requirementsCheckedByPageReview": 2,
+    "designMockup": "waived by Agent: the button follows the existing list pattern"
+  },
+  "qaTestSet": {
+    "id": "ats-20261109-113103-a4b5af",
+    "modelRequests": 60,
+    "modelCostUsd": "0.060260556",
+    "limitUsd": "0.50",
+    "testsSha256": "63445c787fec5350e95fee880d16137755fa03da60c8d4c501a9ad407e46dac2",
+    "tests": 8,
+    "onOriginalCode": { "passed": 1, "total": 8 },
+    "decision": "approved, then no longer used",
+    "defectiveTests": 2,
+    "defects": [
+      "A REQ-04 test expects two open tasks where one is correct.",
+      "The REQ-05 and REQ-06 browser test cannot start its browser."
+    ]
+  },
+  "attempt1": {
+    "runId": "run-20261109-114206-f925db",
+    "runtime": "claude-code",
+    "model": "deepseek-flash",
+    "modelRequests": 13,
+    "modelCostUsd": "0.0222795",
+    "limitUsd": "0.50",
+    "checks": {
+      "build": "passed",
+      "unitTests": { "passed": 8, "total": 8 },
+      "qaTests": { "passed": 6, "total": 8 },
+      "scope": "respected"
+    },
+    "result": "VerificationFailed on the two defective QA tests"
+  },
+  "attempt2": {
+    "runId": "run-20261109-115903-79ad06",
+    "mode": "approved retry without the QA test set",
+    "runtime": "claude-code",
+    "model": "deepseek-flash",
+    "rounds": 1,
+    "modelRequests": 14,
+    "modelCostUsd": "0.027396912",
+    "limitUsd": "0.50",
+    "checks": {
+      "build": "passed",
+      "unitTests": { "passed": 8, "total": 8 },
+      "acceptanceTests": { "passed": 4, "total": 4 },
+      "browser": "passed",
+      "scope": "respected"
+    },
+    "reviewer": "Agent at the owner's request; agent review, not independent human review",
+    "reviewScores": { "correctness": 5, "readability": 4, "testQuality": 4, "scopeDiscipline": 5 },
+    "agentInterfaceMinutes": 6,
+    "humanReviewMinutes": "Unknown",
+    "judge": {
+      "id": "judge-20261109-120850-beba54",
+      "mode": "independent review: scores locked before the advice appeared",
+      "modelRequests": 1,
+      "modelCostUsd": "0.005188548",
+      "limitUsd": "0.50",
+      "proposedScores": { "correctness": 5, "readability": 5, "testQuality": 4, "scopeDiscipline": 5 },
+      "risks": "Risk 1 holds: a failed request gives the user no feedback. Risk 2 does not hold: its own evidence shows four of four acceptance tests passed."
+    },
+    "decision": "Approved",
+    "publishedCommit": "5ff1af002270e7761cea889b0bb4318e2c65f599",
+    "changedFiles": 7,
+    "ci": "build-test passed at the published commit in 40 seconds",
+    "draftPullRequest": true,
+    "merged": false,
+    "deployed": false
+  },
+  "totalModelCostUsd": "0.130426176",
+  "savedRunsShown": [
+    "run-20261106-172958-8c3348: issue #8 scope conflict, 6 November 2026",
+    "exp-20261104-205610-fcc792: blind A/B experiment, 4 November 2026"
+  ],
+  "limits": [
+    "One small feature in a small demo app.",
+    "Agent review, not independent human review.",
+    "Two defective QA tests; the approved retry ran without independent QA tests.",
+    "One Judge risk did not hold.",
+    "Waiting time is cut.",
+    "Synthetic narration; English captions provided."
+  ],
+  "media": [
+    { "file": "factory-demo-v3-poster.png", "bytes": 83435, "sha256": "4ca075383ee6ba747b0f57ce6acf39ed6db996ce3927828459d7369cf6a1c4c5" },
+    { "file": "factory-demo-v3.mp4", "bytes": 48780379, "sha256": "12fc54a1557fa35440944c7c8b154b83e29c46b61f4221d3937a59126029f433" },
+    { "file": "factory-demo-v3.srt", "bytes": 8593, "sha256": "0a97bb138398349e60f9c25e7f1c3b2ae2a1a99b0c235197e05d024d6f8216f9" },
+    { "file": "factory-demo-v3.vtt", "bytes": 8601, "sha256": "a0e902a6bfa89676320495d9c3a7d9cbc4777e3698846963aab39320975aebaa" }
+  ]
+}
