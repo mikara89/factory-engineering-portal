@@ -15,7 +15,7 @@ hide:
 <p class="fe-showcase-lead">From an approved request to a verified draft PR, with human approvals and checks outside the agent's control.</p>
 
 [Watch the real demo](updates/2026-11-16-factory-demo-v4.md#watch-the-videos){ .md-button .md-button--primary }
-[Explore the architecture](architecture/overview.md){ .md-button }
+[Explore the architecture](mvp/architecture.md){ .md-button }
 
 <p class="fe-showcase-promises">Manual intake <span aria-hidden="true">·</span> Explicit spending limits <span aria-hidden="true">·</span> People keep merge authority</p>
 
@@ -82,20 +82,24 @@ hide:
 
 ## Watch real Factory work
 
-Demo v1 shows a small app, a real model run, and the decisions around it. Every shot identifies live work, a recorded real run, or a scripted safety test.
+Demo v4 follows one real task from a GitHub issue to a pending review. An AI Simulated User operated Factory at the owner's request. Every shot identifies live work, a recorded real run, or a scripted step.
 
-<div class="fe-showcase-proof-grid">
-<a class="fe-showcase-proof-card" href="updates/2026-11-02-mvp-demo-v1/#part-1-three-use-cases">
-<img loading="lazy" width="1440" height="810" src="assets/showcase/factory-demo-v1-part1-poster.png" alt="Poster for the recorded issue-to-draft-PR demonstration.">
-<span class="fe-showcase-proof-copy"><span class="fe-showcase-kicker">Demo v1 · Part 1</span><strong>From an issue to a verified draft PR</strong><span>Success · review and correction · scripted scope refusal</span><span class="fe-showcase-proof-link">Watch the workflow <span aria-hidden="true">→</span></span></span>
+<div class="fe-showcase-proof-grid fe-showcase-proof-grid--three">
+<a class="fe-showcase-proof-card" href="updates/2026-11-16-factory-demo-v4/#part-1-what-changed-and-where-factory-goes-5-minutes-53-seconds">
+<img loading="lazy" width="1440" height="810" src="assets/demo-v4/factory-demo-v4-1-changes-direction-poster.png" alt="Title card of Demo v4, Part 1: what changed, and where Factory goes.">
+<span class="fe-showcase-proof-copy"><span class="fe-showcase-kicker">Demo v4 · Part 1</span><strong>What changed, and where Factory goes</strong><span>Eight changes since Demo v3 · direction (a plan)</span><span class="fe-showcase-proof-link">Watch Part 1 <span aria-hidden="true">→</span></span></span>
 </a>
-<a class="fe-showcase-proof-card" href="updates/2026-11-02-mvp-demo-v1/#part-2-experiments-scores-and-the-advisory-judge">
-<img loading="lazy" width="1440" height="810" src="assets/showcase/factory-demo-v1-part2-poster.png" alt="Poster for the recorded experiments and advisory-judge demonstration.">
-<span class="fe-showcase-proof-copy"><span class="fe-showcase-kicker">Demo v1 · Part 2</span><strong>Compare runs and inspect advice</strong><span>Experiments · review scores · advisory judge</span><span class="fe-showcase-proof-link">Watch the comparison <span aria-hidden="true">→</span></span></span>
+<a class="fe-showcase-proof-card" href="updates/2026-11-16-factory-demo-v4/#part-2-from-issue-to-trusted-tests-14-minutes-38-seconds">
+<img loading="lazy" width="1440" height="810" src="assets/demo-v4/factory-demo-v4-2-issue-to-tests-poster.png" alt="Title card of Demo v4, Part 2: from issue to trusted tests.">
+<span class="fe-showcase-proof-copy"><span class="fe-showcase-kicker">Demo v4 · Part 2</span><strong>From issue to trusted tests</strong><span>Live triage · QA tests · per-test review</span><span class="fe-showcase-proof-link">Watch Part 2 <span aria-hidden="true">→</span></span></span>
+</a>
+<a class="fe-showcase-proof-card" href="updates/2026-11-16-factory-demo-v4/#part-3-from-tests-to-a-safe-decision-8-minutes-2-seconds">
+<img loading="lazy" width="1440" height="810" src="assets/demo-v4/factory-demo-v4-3-tests-to-decision-poster.png" alt="Title card of Demo v4, Part 3: from tests to a safe decision.">
+<span class="fe-showcase-proof-copy"><span class="fe-showcase-kicker">Demo v4 · Part 3</span><strong>From tests to a safe decision</strong><span>Coding run · Judge loop · pending review</span><span class="fe-showcase-proof-link">Watch Part 3 <span aria-hidden="true">→</span></span></span>
 </a>
 </div>
 
-[Read the Demo v1 evidence and limits](updates/2026-11-02-mvp-demo-v1.md){ .fe-showcase-text-link }
+[Read the Demo v4 evidence and limits](updates/2026-11-16-factory-demo-v4.md#evidence-and-limits){ .fe-showcase-text-link }
 
 </section>
 
@@ -103,37 +107,41 @@ Demo v1 shows a small app, a real model run, and the decisions around it. Every 
 
 ## A workflow with clear decisions
 
+![Workflow of the MVP: issue, triage agent, owner approval of the work request, QA agent, owner approval of the tests and run limits, coding agent in an isolated container, trusted checks, optional Judge loop, owner review, draft pull request, and a person merges on GitHub.](assets/diagrams/mvp-workflow.svg)
+
 <details markdown>
-<summary>See the complete workflow</summary>
+<summary>Read the workflow as text</summary>
 
 1. Import a GitHub issue as a work item. Intake stays manual.
 2. Let a triage agent draft requirements, checks, and allowed paths. The owner approves the request.
-3. Check the exact attempt, base commit, and money limit before each live model call.
-4. Run the coding agent in an isolated container with limited file scope.
-5. Run build, tests, acceptance checks, and a browser check outside the agent's control.
-6. Refuse a candidate that changes files outside its allowed scope.
-7. Review the diff, screenshots, requirement verdicts, and four scores.
-8. Start a separately approved attempt when the reviewer requests changes.
-9. Open a draft PR with the verified files after approval. People decide merge and deployment.
+3. Let a separate QA agent write acceptance tests from the approved request. The owner reviews each test against its requirement and approves the test set.
+4. Check the exact attempt, base commit, and money limit before each live model call.
+5. Run the coding agent in an isolated container with limited file scope.
+6. Run build, tests, acceptance checks, and a browser check outside the agent's control.
+7. Refuse a candidate that changes files outside its allowed scope.
+8. Let the Judge loop score the result and request revisions inside approved limits. The loop never approves.
+9. Review the diff, screenshots, requirement verdicts, and four scores. A review without the required evidence stays pending.
+10. Start a separately approved attempt when the reviewer requests changes.
+11. Open a draft PR with the verified files after approval. People decide merge and deployment.
 
 </details>
 
-Factory also compares runs in experiments and offers an advisory judge. The judge gives advice only. It does not decide a requirement or approve a change.
+Factory also compares runs in experiments. The Judge scores a result and can request a revision inside approved limits. The Judge does not decide a requirement or approve a change.
 
 ## Evidence and limits
 
-The videos were recorded on 2 November 2026. Read the [MVP status](status.md#mvp) for the milestone record.
+Demo v4 was recorded on 16 November 2026. Read the [MVP status](status.md#mvp) for the milestone record.
 
-- The demo uses one small app with one deliberate bug.
-- Claude Code performed the video reviews at the owner's request. These are not independent human reviews.
-- Time savings are not established. Experiment scores are agent scores and were not blind.
-- The judge's calibration and benefit are not accepted.
-- No PR in the recorded demo was merged, and nothing was deployed.
+- The demo shows one small task in a small demo app. One task does not show general reliability or time savings.
+- An AI Simulated User operated Factory at the owner's request. Every review is an agent review. The review is not independent of the Judge.
+- The review stayed pending. No draft PR was opened, and nothing was published.
+- Time savings are not established.
+- The [Demo v3](updates/2026-11-09-factory-demo-v3.md), [Demo v2](updates/2026-11-08-factory-demo-v2.md), and [Demo v1](updates/2026-11-02-mvp-demo-v1.md) recordings remain available with their original limits.
 
 <details markdown>
 <summary>Earlier phases</summary>
 
-Phases 0 to 5A tested the workflow with hosted runners and protected verification. Phase 5A stopped incomplete: technical feasibility was demonstrated within the tested scope, but comparative benefit over Baseline was not demonstrated. See [earlier phases](status.md#earlier-phases).
+Phases 0 to 5A tested the workflow with hosted runners and protected verification. Phase 5A stopped incomplete: technical feasibility was demonstrated within the tested scope, but comparative benefit over Baseline was not demonstrated. See the [Legacy POC pages](legacy/index.md).
 
 </details>
 
@@ -149,13 +157,13 @@ Phases 0 to 5A tested the workflow with hosted runners and protected verificatio
 
     Current decisions, milestones, and limitations.
 
-- :material-book-open-page-variant: **[Simple Guide](guide/simple-guide.md)**
+- :material-sitemap-outline: **[MVP architecture](mvp/architecture.md)**
 
-    The architecture in plain language.
+    Components, workflow, and trust boundaries of the MVP.
 
-- :material-sitemap-outline: **[Architecture](architecture/overview.md)**
+- :material-archive-outline: **[Legacy POC](legacy/index.md)**
 
-    Logical boundaries, deployment, and trust.
+    The proof of concept of Phases 0 to 5A, kept as a historical record.
 
 - :material-map-marker-path: **[Roadmap](roadmap.md)**
 

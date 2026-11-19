@@ -1,5 +1,8 @@
 # Physical architecture and deployment
 
+!!! note "Legacy POC page"
+    This page describes the proof of concept (POC) of Phases 0 to 5A. It does not describe the current MVP. Read the [MVP architecture](../mvp/architecture.md) and the [Legacy POC overview](../legacy/index.md). This note was added on 19 November 2026.
+
 The deployment uses GitHub repositories, GitHub Actions, disposable engineering execution, and GitHub Pages. The engineering diagram includes target responsibilities beyond the qualified scope on the [status page](../status.md). The portal has no API or database.
 
 ## Repository boundaries

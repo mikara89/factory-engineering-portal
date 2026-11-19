@@ -1,5 +1,8 @@
 # Architecture overview
 
+!!! note "Legacy POC page"
+    This page describes the proof of concept (POC) of Phases 0 to 5A. It does not describe the current MVP. Read the [MVP architecture](../mvp/architecture.md) and the [Legacy POC overview](../legacy/index.md). This note was added on 19 November 2026.
+
 Factory Engineering controls which work an AI coding agent may do. Separate steps receive requests, check approvals, run the agent, independently test its result, and publish approved changes.
 
 The colored boxes below are logical responsibilities. They are not separate hosted services. GitHub Actions supplies workflow execution. The separate control repository keeps trusted rules and saved decisions. The [guide glossary](../guide/simple-guide.md#14-glossary) explains the technical names used here.
