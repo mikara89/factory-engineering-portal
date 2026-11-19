@@ -1,5 +1,8 @@
 # Trust boundaries and permissions
 
+!!! note "Legacy POC page"
+    This page describes the proof of concept (POC) of Phases 0 to 5A. It does not describe the current MVP. Read the [MVP architecture](../mvp/architecture.md) and the [Legacy POC overview](../legacy/index.md). This note was added on 19 November 2026.
+
 Factory treats agent output as untrusted. Trusted components validate and verify the exact candidate. People decide whether to merge and deploy.
 
 ## Boundaries

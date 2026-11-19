@@ -1,5 +1,8 @@
 # Logical architecture
 
+!!! note "Legacy POC page"
+    This page describes the proof of concept (POC) of Phases 0 to 5A. It does not describe the current MVP. Read the [MVP architecture](../mvp/architecture.md) and the [Legacy POC overview](../legacy/index.md). This note was added on 19 November 2026.
+
 These logical components describe the target design. A component is a responsibility boundary, not necessarily a separate service or job.
 
 ## Components

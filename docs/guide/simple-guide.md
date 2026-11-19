@@ -1,5 +1,8 @@
 # Factory Engineering Architecture: Simple Guide
 
+!!! note "Legacy POC page"
+    This page describes the proof of concept (POC) of Phases 0 to 5A. It does not describe the current MVP. Read the [MVP architecture](../mvp/architecture.md) and the [Legacy POC overview](../legacy/index.md). This note was added on 19 November 2026.
+
 <dl class="fe-meta">
   <dt>Project</dt>
   <dd><code>mikara89/factory-engineering</code></dd>
