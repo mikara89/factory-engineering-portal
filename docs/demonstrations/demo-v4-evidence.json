@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "recordedOn": "2026-11-16",
+  "scope": "One real task in the TaskFlow demo app (issue #29), shown in three parts; the task ends with a pending review and nothing published; no claim of general reliability or time savings",
+  "operator": "An AI Simulated User, played by Claude Code at the owner's request, operated Factory and clicked every decision; no human appears in the videos",
+  "approvedModelBudgetUsd": "4.70",
+  "videos": [
+    {
+      "file": "factory-demo-v4-1-changes-direction.mp4",
+      "title": "Part 1: What changed, and where Factory goes",
+      "durationSeconds": 353.0
+    },
+    {
+      "file": "factory-demo-v4-2-issue-to-tests.mp4",
+      "title": "Part 2: From issue to trusted tests",
+      "durationSeconds": 878.4
+    },
+    {
+      "file": "factory-demo-v4-3-tests-to-decision.mp4",
+      "title": "Part 3: From tests to a safe decision",
+      "durationSeconds": 481.8
+    },
+    {
+      "file": "factory-demo-v4.mp4",
+      "title": "Full recording: the three parts with chapter cards",
+      "durationSeconds": 1625.3
+    }
+  ],
+  "part1": {
+    "content": "The changes since Demo v3, each shown on a saved real Factory page, and the product direction as a plan",
+    "statusBadgesSource": "The status page of the recording day: Real, Offline checks, Fake only",
+    "screensTaken": "Read-only on 16 November 2026; some screens show items of an earlier, unpublished recording take",
+    "direction": "A plan, not delivered features"
+  },
+  "baseCommit": "43bc04038c70",
+  "workItem": "wi-20261116-083859-401b49",
+  "repositoryOnboarding": {
+    "mode": "scripted setup agent; no model call",
+    "secondDemoRepository": "A small Node.js demo repository",
+    "baseCommit": "2ca50838978fd1c9917e240b18cc8be7f7d2769a",
+    "setupAttempt": "setup-e46caca6406c4d87a3dd8c7db3bcc6a2",
+    "modelCostUsd": "0",
+    "commands": "All proposed commands marked Not run",
+    "pullRequestOpened": false
+  },
+  "triage": {
+    "id": "tri-20261116-084103-56704c",
+    "modelRequests": 12,
+    "requestLimit": 20,
+    "modelCostUsd": "0.036336072",
+    "limitUsd": "0.20",
+    "requirements": 8,
+    "requirementsCoveredByChecks": 6,
+    "humanChecks": 2,
+    "openQuestions": 3,
+    "answersChosen": [
+      "All, Open and Overdue lists",
+      "No prototype: treat it as an existing-pattern change",
+      "Kept unchanged; the task leaves the Overdue list at once"
+    ],
+    "designMockup": "waived with a recorded reason: the button follows the existing tab-button style"
+  },
+  "qaTestSet": {
+    "attempts": [
+      {
+        "id": "ats-20261116-084737-1c2251",
+        "status": "Failed",
+        "modelRequests": 60,
+        "requestLimit": 60,
+        "modelCostUsdOnCard": "0.0488",
+        "limitUsd": "0.30"
+      },
+      {
+        "id": "ats-20261116-090256-9787bb",
+        "status": "Failed",
+        "modelRequests": 60,
+        "requestLimit": 60,
+        "modelCostUsdOnCard": "0.0801",
+        "limitUsd": "0.30"
+      },
+      {
+        "id": "ats-20261116-093431-60045a",
+        "status": "Approved before the run",
+        "modelRequests": 14,
+        "requestLimit": 100,
+        "modelCostUsdOnCard": "0.0169",
+        "limitUsd": "0.30"
+      }
+    ],
+    "allAttemptsModelCostUsd": "0.145918344",
+    "cardValuesNote": "Card values are rounded to four decimals. The total is the exact recorded value.",
+    "failureCause": "A Factory defect, fixed afterwards in Factory pull request #302. The QA request limit was raised from 60 to 100 for this recording.",
+    "approvedSet": {
+      "id": "ats-20261116-093431-60045a",
+      "digestSha256": "fd9446303c9488845e6132ffb29b63c3917c0ad93b24e188042dd8750287f8f0",
+      "tests": 11,
+      "baseCheck": {
+        "passed": 2,
+        "failedWithFeatureMissing": 9,
+        "setupErrors": 0,
+        "unknown": 0
+      },
+      "perTestReview": {
+        "matchesRequirement": 11,
+        "doesNotMatch": 0,
+        "reviewer": "AI Simulated User at the owner's request; agent review"
+      },
+      "note": "Two tests pass at the base commit. A test that passes at the base does not prove that it checks the new feature. The review found no defective test in this recording."
+    }
+  },
+  "codingRun": {
+    "id": "run-20261116-100736-528771",
+    "status": "Verified",
+    "runtime": "claude-code",
+    "model": "deepseek-flash",
+    "agentProfile": "factory",
+    "modelRequests": 16,
+    "modelCostUsd": "0.029988792",
+    "limitUsd": "0.50",
+    "checks": {
+      "passed": 35,
+      "total": 35
+    },
+    "scope": "respected",
+    "requirements": 8,
+    "changedFiles": 6
+  },
+  "judgeLoop": {
+    "id": "loop-20261116-101211-2b08f8",
+    "settingsSha256": "28dedb390574872ec2acbb2330a965d4a38c9a2ac8ab3a3e373e1fadc9ea3989",
+    "minimumScore": 4,
+    "maximumRevisions": 2,
+    "totalLimitUsd": "3.00",
+    "rounds": 1,
+    "revisions": 0,
+    "status": "Ready for your review",
+    "scores": "5 / 5 / 5 / 5",
+    "judgeAttempt": {
+      "id": "judge-loop-20261116-101211-2b08f8-0",
+      "modelRequests": 1,
+      "requestLimit": 2,
+      "modelCostUsd": "0.00615258",
+      "limitUsd": "0.50"
+    },
+    "note": "The loop never approves or merges."
+  },
+  "review": {
+    "reviewer": "AI Simulated User at the owner's request; agent review, not independent of the Judge",
+    "requirementsMarkedMet": 6,
+    "humanChecksWithoutEnoughEvidence": [
+      "REQ-05",
+      "REQ-06"
+    ],
+    "result": "pending, with saved notes",
+    "decision": "none",
+    "agentMinutesEntered": 2,
+    "humanReviewMinutes": "Unknown"
+  },
+  "outcome": {
+    "draftPullRequest": false,
+    "published": false,
+    "merged": false,
+    "deployed": false
+  },
+  "totalModelCostUsd": "0.218395788",
+  "totalModelCostIncludes": "Triage, three QA writer attempts, the coding run, and the Judge attempt",
+  "earlierTakeNotShown": {
+    "modelCostUsd": "0.084646368",
+    "shownInTheseVideos": false
+  },
+  "limits": [
+    "One small task in a small demo app.",
+    "Agent review, not independent human review. The review stays pending.",
+    "Two QA writer attempts failed because of a Factory defect, fixed afterwards in Factory pull request #302; the QA request limit was raised from 60 to 100 for this recording.",
+    "The per-test review found no defective test, so the videos show no defect found by that review.",
+    "Requirements REQ-05 and REQ-06 are human checks without enough evidence. Nothing was approved or published, and there is no finished feature.",
+    "The Judge loop needed no revision, so the videos show no live revision.",
+    "The repository onboarding agent is scripted and uses no model.",
+    "The direction in Part 1 is a plan, not delivered features.",
+    "The videos do not show that Factory saves engineering time.",
+    "Waiting time is cut. Synthetic narration; English captions provided."
+  ],
+  "media": [
+    {
+      "file": "factory-demo-v4-1-changes-direction-poster.png",
+      "bytes": 52896,
+      "sha256": "93c12d7216cb10343d7efde84e68f52b433c7e69d4661a43dffbeaf6c068c967"
+    },
+    {
+      "file": "factory-demo-v4-1-changes-direction.mp4",
+      "bytes": 18593389,
+      "sha256": "6accae44f32cf702695b0b1b945d66f496dca8e9ec2186c63c316cde86c12a89"
+    },
+    {
+      "file": "factory-demo-v4-1-changes-direction.srt",
+      "bytes": 5113,
+      "sha256": "4be7f106df88251647c09a09c16937defe64dd19b0720b360dd82316fa83cc83"
+    },
+    {
+      "file": "factory-demo-v4-1-changes-direction.vtt",
+      "bytes": 5121,
+      "sha256": "06535fdaad0a51a5ddaa5a703fff6a9cd8d99532729be2761bd04c82058d268c"
+    },
+    {
+      "file": "factory-demo-v4-2-issue-to-tests-poster.png",
+      "bytes": 50945,
+      "sha256": "8e6ffcc2debe5f7c3c33d15dbbcc09b76f631a526557607e19dfe2f97ccf729d"
+    },
+    {
+      "file": "factory-demo-v4-2-issue-to-tests.mp4",
+      "bytes": 55806943,
+      "sha256": "9f66e88b4ba80c9d6c01b04368b048a5e9999cc3556ffbb09a3e63f35a71e6c4"
+    },
+    {
+      "file": "factory-demo-v4-2-issue-to-tests.srt",
+      "bytes": 9244,
+      "sha256": "d242c3d4b88c1b866d4d21bd8c9eac1ffccf02904ea399fa7696e587eb17f497"
+    },
+    {
+      "file": "factory-demo-v4-2-issue-to-tests.vtt",
+      "bytes": 9252,
+      "sha256": "aaa2b134f2bccc9deb14e43cf2b2398f5e55fca37973bb97a478286346e76167"
+    },
+    {
+      "file": "factory-demo-v4-3-tests-to-decision-poster.png",
+      "bytes": 50700,
+      "sha256": "32d706cc68a8a147dc3559bbccd48d049536bfdb7fb1fca64644a05d2aef2fad"
+    },
+    {
+      "file": "factory-demo-v4-3-tests-to-decision.mp4",
+      "bytes": 23437891,
+      "sha256": "1d342941c5fa43fb6dc9e288f502df28dc5e9d7e5c4a7a325366870ae21e45bb"
+    },
+    {
+      "file": "factory-demo-v4-3-tests-to-decision.srt",
+      "bytes": 6015,
+      "sha256": "f16895a90cbf4b4457e249f732b4f32bfb6582555a032f96ab40e0772c12c47a"
+    },
+    {
+      "file": "factory-demo-v4-3-tests-to-decision.vtt",
+      "bytes": 6023,
+      "sha256": "e96160905f87fb6a518b8cfd4e18a46d0908c7ce8ec51e79ff73dde1c6f6d15d"
+    },
+    {
+      "file": "factory-demo-v4-poster.png",
+      "bytes": 50688,
+      "sha256": "f1c020740274ed30f62fdc07dd3c62d79c691ff5e5606fd12d62ec68df257520"
+    },
+    {
+      "file": "factory-demo-v4.mp4",
+      "bytes": 95234544,
+      "sha256": "5e08b6c4bb808c4b2c143269d0345b83a8164f8efc7ad75b84d49742ed073aff"
+    },
+    {
+      "file": "factory-demo-v4.srt",
+      "bytes": 18916,
+      "sha256": "7a404a0d114fdc7d8dc7f15a5cfeedc0a85411a3ee27f57f3ffb599532007f3c"
+    },
+    {
+      "file": "factory-demo-v4.vtt",
+      "bytes": 18924,
+      "sha256": "419a5ce7301d6191d113752fc5b858d3b5b2596d814db5491e40ade402b3fd50"
+    }
+  ]
+}
