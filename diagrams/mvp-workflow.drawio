@@ -1,0 +1,116 @@
+<mxfile host="Factory" agent="Claude Code" version="24.7.17">
+  <diagram id="mvp-workflow" name="MVP workflow">
+    <mxGraphModel dx="1200" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1200" pageHeight="500" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- Row 1: from the issue to the approved tests -->
+        <mxCell id="n1" value="GitHub issue&#xa;or typed request" style="rounded=1;html=0;fillColor=#dbeafe;strokeColor=#2563eb;fontColor=#0f172a;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" value="Triage agent&#xa;drafts a work request" style="rounded=1;html=0;fillColor=#ffedd5;strokeColor=#ea5800;fontColor=#431407;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="230" y="60" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" value="Owner approves&#xa;the work request" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;size=14;html=0;fillColor=#fef3c7;strokeColor=#d97706;fontColor=#111827;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="60" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" value="QA agent&#xa;writes acceptance tests" style="rounded=1;html=0;fillColor=#ffedd5;strokeColor=#ea5800;fontColor=#431407;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="610" y="60" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" value="Owner approves the&#xa;tests and the run limits" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;size=14;html=0;fillColor=#fef3c7;strokeColor=#d97706;fontColor=#111827;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="800" y="60" width="160" height="70" as="geometry" />
+        </mxCell>
+        <!-- Row 2: from the coding run to the merge -->
+        <mxCell id="n6" value="Coding agent&#xa;in an isolated container" style="rounded=1;html=0;fillColor=#ffedd5;strokeColor=#ea5800;fontColor=#431407;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="250" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" value="Trusted checks&#xa;in fresh offline containers" style="rounded=1;html=0;fillColor=#dcfce7;strokeColor=#16a34a;fontColor=#052e16;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="230" y="250" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" value="Judge loop&#xa;optional · advisory" style="rounded=1;dashed=1;html=0;fillColor=#ffedd5;strokeColor=#ea5800;fontColor=#431407;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="460" y="250" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" value="Owner reviews&#xa;in the browser" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;size=14;html=0;fillColor=#fef3c7;strokeColor=#d97706;fontColor=#111827;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="650" y="250" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" value="Draft pull request&#xa;exactly the verified files" style="rounded=1;html=0;fillColor=#ede9fe;strokeColor=#7c3aed;fontColor=#1f2937;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="920" y="250" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" value="A person&#xa;merges on GitHub" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;size=14;html=0;fillColor=#fef3c7;strokeColor=#d97706;fontColor=#111827;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="250" width="150" height="70" as="geometry" />
+        </mxCell>
+        <!-- Forward edges -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=0;endArrow=block;endFill=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="n1" target="n2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=0;endArrow=block;endFill=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="n2" target="n3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=0;endArrow=block;endFill=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="n3" target="n4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=0;endArrow=block;endFill=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="n4" target="n5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" value="the owner confirms the paid run" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=0;endArrow=block;endFill=1;strokeColor=#475569;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;fontColor=#334155;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n5" target="n6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="190" />
+              <mxPoint x="115" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=0;endArrow=block;endFill=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="n6" target="n7"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" value="passed" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=0;endArrow=block;endFill=1;strokeColor=#475569;strokeWidth=1.5;fontSize=12;fontColor=#334155;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n7" target="n8"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=0;endArrow=block;endFill=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="n8" target="n9"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" value="approves,&#xa;then publishes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=0;endArrow=block;endFill=1;strokeColor=#475569;strokeWidth=1.5;fontSize=12;fontColor=#334155;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n9" target="n10"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=0;endArrow=block;endFill=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="n10" target="n11"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <!-- Loops back to the coding agent -->
+        <mxCell id="e11" value="a check failed: next round,&#xa;if rounds and money remain" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=0;endArrow=block;endFill=1;strokeColor=#16a34a;strokeWidth=1.5;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.7;entryY=1;entryDx=0;entryDy=0;fontSize=12;fontColor=#14532d;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n7" target="n6">
+          <mxGeometry x="-0.1" y="20" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="275" y="355" />
+              <mxPoint x="145" y="355" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" value="revision requested, inside the approved limits" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=0;endArrow=block;endFill=1;strokeColor=#ea5800;strokeWidth=1.5;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=1;entryDx=0;entryDy=0;fontSize=12;fontColor=#7c2d12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="n8" target="n6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="535" y="415" />
+              <mxPoint x="85" y="415" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- Legend -->
+        <mxCell id="l1" value="" style="rounded=1;html=0;fillColor=#dbeafe;strokeColor=#2563eb;" vertex="1" parent="1"><mxGeometry x="40" y="460" width="24" height="16" as="geometry" /></mxCell>
+        <mxCell id="t1" value="Input" style="text;html=0;align=left;verticalAlign=middle;fontSize=12;fontColor=#334155;" vertex="1" parent="1"><mxGeometry x="70" y="458" width="60" height="20" as="geometry" /></mxCell>
+        <mxCell id="l2" value="" style="rounded=1;html=0;fillColor=#ffedd5;strokeColor=#ea5800;" vertex="1" parent="1"><mxGeometry x="150" y="460" width="24" height="16" as="geometry" /></mxCell>
+        <mxCell id="t2" value="Agent: its output is untrusted" style="text;html=0;align=left;verticalAlign=middle;fontSize=12;fontColor=#334155;" vertex="1" parent="1"><mxGeometry x="180" y="458" width="190" height="20" as="geometry" /></mxCell>
+        <mxCell id="l3" value="" style="rounded=1;html=0;fillColor=#dcfce7;strokeColor=#16a34a;" vertex="1" parent="1"><mxGeometry x="390" y="460" width="24" height="16" as="geometry" /></mxCell>
+        <mxCell id="t3" value="Trusted checks" style="text;html=0;align=left;verticalAlign=middle;fontSize=12;fontColor=#334155;" vertex="1" parent="1"><mxGeometry x="420" y="458" width="110" height="20" as="geometry" /></mxCell>
+        <mxCell id="l4" value="" style="shape=hexagon;perimeter=hexagonPerimeter2;fixedSize=1;size=5;html=0;fillColor=#fef3c7;strokeColor=#d97706;" vertex="1" parent="1"><mxGeometry x="550" y="460" width="24" height="16" as="geometry" /></mxCell>
+        <mxCell id="t4" value="Owner or human decision" style="text;html=0;align=left;verticalAlign=middle;fontSize=12;fontColor=#334155;" vertex="1" parent="1"><mxGeometry x="580" y="458" width="170" height="20" as="geometry" /></mxCell>
+        <mxCell id="l5" value="" style="rounded=1;html=0;fillColor=#ede9fe;strokeColor=#7c3aed;" vertex="1" parent="1"><mxGeometry x="770" y="460" width="24" height="16" as="geometry" /></mxCell>
+        <mxCell id="t5" value="Result" style="text;html=0;align=left;verticalAlign=middle;fontSize=12;fontColor=#334155;" vertex="1" parent="1"><mxGeometry x="800" y="458" width="60" height="20" as="geometry" /></mxCell>
+        <mxCell id="t6" value="Dashed: optional" style="text;html=0;align=left;verticalAlign=middle;fontSize=12;fontColor=#334155;" vertex="1" parent="1"><mxGeometry x="880" y="458" width="130" height="20" as="geometry" /></mxCell>
+        <!-- Icon badges: built-in draw.io stencils -->
+        <mxCell id="badge-n1" value="" style="ellipse;fillColor=#FFFFFF;strokeColor=#2563eb;strokeWidth=1.5;html=0;" vertex="1" parent="1"><mxGeometry x="28" y="48" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="icon-n1" value="" style="shape=mxgraph.azure.github_code;fillColor=#2563eb;strokeColor=none;aspect=fixed;pointerEvents=1;html=0;" vertex="1" parent="1"><mxGeometry x="35" y="55" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="badge-n2" value="" style="ellipse;fillColor=#FFFFFF;strokeColor=#ea5800;strokeWidth=1.5;html=0;" vertex="1" parent="1"><mxGeometry x="218" y="48" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="icon-n2" value="" style="shape=mxgraph.aws4.robotics;fillColor=#ea5800;strokeColor=none;aspect=fixed;pointerEvents=1;html=0;" vertex="1" parent="1"><mxGeometry x="225" y="55" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="badge-n3" value="" style="ellipse;fillColor=#FFFFFF;strokeColor=#d97706;strokeWidth=1.5;html=0;" vertex="1" parent="1"><mxGeometry x="408" y="48" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="icon-n3" value="" style="shape=mxgraph.aws4.user;fillColor=#d97706;strokeColor=none;aspect=fixed;pointerEvents=1;html=0;" vertex="1" parent="1"><mxGeometry x="415" y="55" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="badge-n4" value="" style="ellipse;fillColor=#FFFFFF;strokeColor=#ea5800;strokeWidth=1.5;html=0;" vertex="1" parent="1"><mxGeometry x="598" y="48" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="icon-n4" value="" style="shape=mxgraph.aws4.robotics;fillColor=#ea5800;strokeColor=none;aspect=fixed;pointerEvents=1;html=0;" vertex="1" parent="1"><mxGeometry x="605" y="55" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="badge-n5" value="" style="ellipse;fillColor=#FFFFFF;strokeColor=#d97706;strokeWidth=1.5;html=0;" vertex="1" parent="1"><mxGeometry x="788" y="48" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="icon-n5" value="" style="shape=mxgraph.aws4.user;fillColor=#d97706;strokeColor=none;aspect=fixed;pointerEvents=1;html=0;" vertex="1" parent="1"><mxGeometry x="795" y="55" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="badge-n6" value="" style="ellipse;fillColor=#FFFFFF;strokeColor=#ea5800;strokeWidth=1.5;html=0;" vertex="1" parent="1"><mxGeometry x="28" y="238" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="icon-n6" value="" style="shape=mxgraph.aws4.robotics;fillColor=#ea5800;strokeColor=none;aspect=fixed;pointerEvents=1;html=0;" vertex="1" parent="1"><mxGeometry x="35" y="245" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="badge-n7" value="" style="ellipse;fillColor=#FFFFFF;strokeColor=#16a34a;strokeWidth=1.5;html=0;" vertex="1" parent="1"><mxGeometry x="218" y="238" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="icon-n7" value="" style="shape=mxgraph.aws4.checklist;fillColor=#16a34a;strokeColor=none;aspect=fixed;pointerEvents=1;html=0;" vertex="1" parent="1"><mxGeometry x="225" y="245" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="badge-n8" value="" style="ellipse;fillColor=#FFFFFF;strokeColor=#ea5800;strokeWidth=1.5;html=0;" vertex="1" parent="1"><mxGeometry x="448" y="238" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="icon-n8" value="" style="shape=mxgraph.aws4.robotics;fillColor=#ea5800;strokeColor=none;aspect=fixed;pointerEvents=1;html=0;" vertex="1" parent="1"><mxGeometry x="455" y="245" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="badge-n9" value="" style="ellipse;fillColor=#FFFFFF;strokeColor=#d97706;strokeWidth=1.5;html=0;" vertex="1" parent="1"><mxGeometry x="638" y="238" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="icon-n9" value="" style="shape=mxgraph.aws4.user;fillColor=#d97706;strokeColor=none;aspect=fixed;pointerEvents=1;html=0;" vertex="1" parent="1"><mxGeometry x="645" y="245" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="badge-n10" value="" style="ellipse;fillColor=#FFFFFF;strokeColor=#7c3aed;strokeWidth=1.5;html=0;" vertex="1" parent="1"><mxGeometry x="908" y="238" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="icon-n10" value="" style="shape=mxgraph.azure.git_repository;fillColor=#7c3aed;strokeColor=none;aspect=fixed;pointerEvents=1;html=0;" vertex="1" parent="1"><mxGeometry x="915" y="245" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="badge-n11" value="" style="ellipse;fillColor=#FFFFFF;strokeColor=#d97706;strokeWidth=1.5;html=0;" vertex="1" parent="1"><mxGeometry x="1108" y="238" width="34" height="34" as="geometry" /></mxCell>
+        <mxCell id="icon-n11" value="" style="shape=mxgraph.aws4.user;fillColor=#d97706;strokeColor=none;aspect=fixed;pointerEvents=1;html=0;" vertex="1" parent="1"><mxGeometry x="1115" y="245" width="20" height="20" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

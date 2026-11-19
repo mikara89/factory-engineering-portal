@@ -56,6 +56,22 @@ jobs:
           echo "Kroki did not become healthy at $KROKI_SERVER_URL" >&2
           exit 1
 
+      # draw.io desktop exports the diagrams in diagrams/ to SVG. The package
+      # comes from the official jgraph release and must match its SHA-256.
+      - name: Install draw.io for diagram export
+        env:
+          DRAWIO_VERSION: "32.6.10"
+          DRAWIO_SHA256: fc96faafe68cb4e06c0b7116779891592b20fce2cde7907adec504f23c5af83c
+        run: |
+          curl --fail --silent --show-error --location --output /tmp/drawio.deb \
+            "https://github.com/jgraph/drawio-desktop/releases/download/v${DRAWIO_VERSION}/drawio-amd64-${DRAWIO_VERSION}.deb"
+          echo "${DRAWIO_SHA256}  /tmp/drawio.deb" | sha256sum --check --strict
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends /tmp/drawio.deb xvfb xauth libasound2t64
+
+      - name: Export draw.io diagrams
+        run: bash scripts/export_diagrams.sh
+
       - name: Build and check documentation
         run: python -m mkdocs build --strict
 

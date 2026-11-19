@@ -27,6 +27,12 @@ Kroki uses host port 8001 because `mkdocs serve` uses port 8000. If Kroki is not
 
 Run `mkdocs build --strict` before you propose a portal update.
 
+## draw.io diagrams
+
+The MVP diagrams are draw.io files in `diagrams/`. The Pages workflow exports each file to `docs/assets/diagrams/<name>.svg` before the build. The exported SVG keeps the diagram source. Do not commit the exported files.
+
+To change a diagram, open the `.drawio` file with draw.io, for example with the draw.io extension for Visual Studio Code. To preview the site locally, install draw.io desktop 32.6.10 and run `bash scripts/export_diagrams.sh` from Git Bash or Linux. Without the exported files, the strict build fails on the missing images.
+
 The reviewed guide is `docs/guide/simple-guide.md`. MkDocs reads site content from `docs/`.
 
 ## Presentation files
