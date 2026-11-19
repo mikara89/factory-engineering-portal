@@ -1,0 +1,391 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:07.988
+Part two of three: from issue to trusted tests. Part one showed
+what changed since demo three, and where Factory goes.
+
+2
+00:00:11.500 --> 00:00:17.188
+Blue means live. Purple means a recorded real run. Red means
+scripted, with no model.
+
+3
+00:00:18.000 --> 00:00:26.088
+Teal means a decision that the AI Simulated User takes at the
+owner's request. Grey means that waiting time is cut inside one
+page.
+
+4
+00:00:28.100 --> 00:00:37.124
+The AI Simulated User operates Factory at the owner's request.
+No human appears in this demo, and every review is an agent
+review.
+
+5
+00:00:42.033 --> 00:00:47.361
+A work item starts from a GitHub issue, in a repository that was
+onboarded first.
+
+6
+00:00:48.833 --> 00:00:55.025
+Triage drafts a request. Each requirement gets a check: an
+automated test, or a human check.
+
+7
+00:00:56.033 --> 00:01:02.273
+The request is approved exactly as it stands, by the AI
+Simulated User at the owner's request.
+
+8
+00:01:03.533 --> 00:01:08.861
+A separate agent writes hidden tests. The coding agent sees only
+the interface note.
+
+9
+00:01:10.033 --> 00:01:15.169
+The base check runs the tests on the unchanged code, with a
+reason for each failure.
+
+10
+00:01:17.133 --> 00:01:22.581
+Each test is reviewed against its requirement. A test that does
+not match can be removed.
+
+11
+00:01:24.333 --> 00:01:30.093
+A removed test gives a smaller set with a new digest. The
+approved set protects the run.
+
+12
+00:01:31.733 --> 00:01:36.317
+In demo three, two defective tests were found only when the run
+failed.
+
+13
+00:01:37.933 --> 00:01:45.349
+In this recording, the review found no weak test. All 11 tests
+matched, and the set was approved before the run.
+
+14
+00:01:49.867 --> 00:01:56.107
+Repository onboarding. The setup agent here is scripted. It uses
+no model and costs nothing.
+
+15
+00:02:02.667 --> 00:02:07.011
+The AI Simulated User opens Set up repository for Factory.
+
+16
+00:02:07.311 --> 00:02:13.407
+It enters the repository, the exact base commit, and the branch,
+and starts the scripted setup.
+
+17
+00:02:24.067 --> 00:02:28.531
+Factory shows the evidence: the attempt, the commit, and the
+cost.
+
+18
+00:02:29.367 --> 00:02:32.031
+Every proposed command is marked Not run.
+
+19
+00:02:36.067 --> 00:02:39.235
+Each proposed file has a diff against the base commit.
+
+20
+00:02:43.667 --> 00:02:53.435
+Every owner question needs an answer before approval. The AI
+Simulated User answers all three, then validates, approves, and
+prepares the draft.
+
+21
+00:03:14.167 --> 00:03:21.175
+This is the exact draft pull request content. Nothing was sent
+to GitHub, and no repository was registered.
+
+22
+00:03:24.867 --> 00:03:27.795
+The new TaskFlow issue has the label factory.
+
+23
+00:03:44.767 --> 00:03:52.639
+Import GitHub issue lists the open issues with that label.
+Nothing is imported until the AI Simulated User chooses one.
+
+24
+00:04:14.267 --> 00:04:16.619
+Issue twenty-nine is the new one.
+
+25
+00:04:22.667 --> 00:04:26.147
+The AI Simulated User imports it as a work item.
+
+26
+00:04:27.167 --> 00:04:30.239
+Factory creates the work item. Nothing runs yet.
+
+27
+00:04:40.967 --> 00:04:46.271
+Live triage. A model reads the issue and the code, and drafts a
+work request.
+
+28
+00:04:56.567 --> 00:05:01.295
+The card shows the exact attempt and the money limit: twenty
+cents at most.
+
+29
+00:05:04.567 --> 00:05:07.183
+The AI Simulated User confirms it.
+
+30
+00:05:07.483 --> 00:05:12.043
+The agent reads the repository files. Each step appears on the
+page.
+
+31
+00:05:12.767 --> 00:05:14.519
+The waiting time is cut here.
+
+32
+00:05:20.267 --> 00:05:23.939
+The agent proposes a draft, and asks open questions.
+
+33
+00:05:24.367 --> 00:05:27.079
+Each requirement has a check that verifies it.
+
+34
+00:05:37.267 --> 00:05:41.995
+The constraints and the allowed paths list the files that this
+change may touch.
+
+35
+00:05:44.467 --> 00:05:48.619
+Each open question has three suggested answers, or a free
+answer.
+
+36
+00:05:50.967 --> 00:05:55.407
+The draft has open questions. Each one has three suggested
+answers.
+
+37
+00:05:56.067 --> 00:06:00.891
+The AI Simulated User reads the questions, and chooses one
+answer for each.
+
+38
+00:06:05.867 --> 00:06:10.475
+Question one: all lists that show an open task get a Complete
+button.
+
+39
+00:06:11.967 --> 00:06:17.007
+Question two: no prototype. The button follows the existing
+tab-button style.
+
+40
+00:06:18.067 --> 00:06:23.635
+Question three: the due date stays, and the task leaves the
+Overdue list at once.
+
+41
+00:06:24.567 --> 00:06:27.279
+Then it sends the answers to the triage agent.
+
+42
+00:06:28.667 --> 00:06:32.051
+The agent updates the draft. The waiting time is cut.
+
+43
+00:06:35.667 --> 00:06:39.963
+The updated draft has no open question. Approval comes next.
+
+44
+00:06:45.000 --> 00:06:51.624
+The work request is still a draft. Before the approval, Factory
+needs a decision on the UI change.
+
+45
+00:06:52.700 --> 00:07:06.356
+The design review. The Complete button is a new interaction, so
+Factory asks for an owner-reviewed prototype, or a waiver. The
+AI Simulated User writes the reason: the button reuses the
+existing tab-button style.
+
+46
+00:07:06.800 --> 00:07:09.056
+It records the waiver with its reason.
+
+47
+00:07:20.500 --> 00:07:27.532
+Back on the work item, the approval. The allowed paths stay
+inside the repository paths, and nothing blocks it.
+
+48
+00:07:32.800 --> 00:07:36.112
+The AI Simulated User approves the work request.
+
+49
+00:07:41.100 --> 00:07:45.156
+Approved. Factory posts the approval on the GitHub issue.
+
+50
+00:07:50.967 --> 00:07:58.695
+The QA test writer ran live three times. The first attempt
+failed after sixty requests, and cost about five cents.
+
+51
+00:08:00.467 --> 00:08:10.667
+A Factory defect was found and fixed afterwards, in pull request
+three hundred and two. The QA request limit was raised from
+sixty to one hundred for this recording.
+
+52
+00:08:13.967 --> 00:08:19.583
+The second attempt failed too, after sixty requests, at a cost
+of about eight cents.
+
+53
+00:08:20.967 --> 00:08:24.423
+The same Factory fix and the higher request limit apply.
+
+54
+00:08:27.267 --> 00:08:30.795
+The third attempt, now with a request limit of one hundred.
+
+55
+00:08:46.567 --> 00:08:51.007
+The card shows the exact attempt and the money limit: thirty
+cents.
+
+56
+00:08:54.367 --> 00:08:56.983
+The AI Simulated User confirms it.
+
+57
+00:08:57.283 --> 00:09:01.939
+The agent writes the tests, and Factory runs them on the
+unchanged commit.
+
+58
+00:09:02.967 --> 00:09:04.719
+The waiting time is cut here.
+
+59
+00:09:10.167 --> 00:09:15.351
+The set has eleven tests, each with an expectation sentence and
+a requirement.
+
+60
+00:09:15.867 --> 00:09:20.955
+Coverage lists the requirements that the tests cover, and those
+that need a human review.
+
+61
+00:09:28.467 --> 00:09:33.387
+Each test sits beside its requirement, with the sentence that
+says what it expects.
+
+62
+00:09:46.534 --> 00:09:52.006
+Factory ran the tests on the unchanged commit. Missing behaviour
+is expected to fail.
+
+63
+00:10:04.134 --> 00:10:10.254
+Two of eleven results pass. Nine fail, and each failure shows
+its reason: Feature missing.
+
+64
+00:10:18.134 --> 00:10:22.598
+A test can pass at the base. That does not prove that it checks
+the new feature.
+
+65
+00:10:52.934 --> 00:10:57.878
+There is no setup error and no unknown failure, so Factory shows
+no warning.
+
+66
+00:11:01.478 --> 00:11:07.958
+Now the per-test review. The AI Simulated User compares each
+test with its requirement, and marks it.
+
+67
+00:11:12.378 --> 00:11:16.746
+For each test it reads the expectation sentence and the
+requirement.
+
+68
+00:11:32.778 --> 00:11:35.226
+This one matches, with a short note.
+
+69
+00:11:36.078 --> 00:11:41.310
+To keep the pace, the scrolling between the tests is cut. Every
+decision is shown.
+
+70
+00:12:22.978 --> 00:12:27.394
+Requirement four has three tests. Each is compared with its
+requirement.
+
+71
+00:12:52.478 --> 00:12:57.326
+The last two tests cover requirement seven: the seed data does
+not change.
+
+72
+00:13:12.978 --> 00:13:15.738
+All eleven tests match their requirements.
+
+73
+00:13:21.378 --> 00:13:23.970
+What happens next depends on the real review.
+
+74
+00:13:28.178 --> 00:13:34.562
+Every test matches its requirement. No test is marked Does not
+match, so no smaller set is needed.
+
+75
+00:13:36.478 --> 00:13:42.142
+The AI Simulated User approves the exact set. It becomes a
+protected check of the run.
+
+76
+00:13:43.378 --> 00:13:47.554
+The set is approved before the run, and bound to its digest.
+
+77
+00:13:50.911 --> 00:13:57.151
+Before and after. In demo three, two defective tests were found
+only when the coding run failed.
+
+78
+00:13:58.411 --> 00:14:06.235
+In this recording, the review found no defective test. All
+eleven tests matched, and the set was approved before the run.
+
+79
+00:14:10.911 --> 00:14:15.615
+The evidence of part two, with identifiers, limits, and costs.
+
+80
+00:14:15.915 --> 00:14:22.803
+Two QA attempts failed because of a Factory defect, now fixed.
+Chapter ten found no defective test.
+
+81
+00:14:23.411 --> 00:14:28.907
+One task on a small app is not a general result. Every review is
+an agent review.
+
+82
+00:14:30.711 --> 00:14:34.911
+The AI Simulated User was played by Claude Code at the owner's
+request.
