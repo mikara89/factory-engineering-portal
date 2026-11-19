@@ -1,0 +1,254 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:09.140
+Part three of three: from tests to a safe decision. Part two
+took one issue through triage, approval, and trusted QA tests.
+
+2
+00:00:11.500 --> 00:00:17.188
+Blue means live. Purple means a recorded real run. Red means
+scripted, with no model.
+
+3
+00:00:18.000 --> 00:00:26.088
+Teal means a decision that the AI Simulated User takes at the
+owner's request. Grey means that waiting time is cut inside one
+page.
+
+4
+00:00:28.100 --> 00:00:37.124
+The AI Simulated User operates Factory at the owner's request.
+No human appears in this demo, and every review is an agent
+review.
+
+5
+00:00:42.333 --> 00:00:45.237
+The coding run works inside its approved budget.
+
+6
+00:00:47.033 --> 00:00:51.953
+Factory checks the build, the tests, the hidden QA tests, and
+the scope.
+
+7
+00:00:53.233 --> 00:00:56.569
+The Judge scores four dimensions, from one to five.
+
+8
+00:00:58.033 --> 00:01:02.785
+If every score is at least four, and there is no finding, the
+loop is done.
+
+9
+00:01:05.133 --> 00:01:08.589
+Then the loop is ready for review. It never approves.
+
+10
+00:01:10.333 --> 00:01:14.485
+Otherwise a revision starts from the same candidate, with the
+findings.
+
+11
+00:01:15.833 --> 00:01:24.137
+Limits: a minimum score, a maximum number of revisions, cost
+caps, and one retry if the Judge answer breaks the format.
+
+12
+00:01:24.733 --> 00:01:30.973
+Then the review. Tests are the evidence for requirements with
+tests. Human checks need their own evidence.
+
+13
+00:01:32.133 --> 00:01:38.277
+With the evidence, the review approves with a reason. The draft
+pull request and CI follow.
+
+14
+00:01:39.233 --> 00:01:44.441
+Without it, notes are saved, the review stays pending, and
+nothing is published.
+
+15
+00:01:47.741 --> 00:01:51.197
+Now the first coding attempt, from the approved work item.
+
+16
+00:01:55.441 --> 00:01:58.489
+The AI Simulated User opens Start run.
+
+17
+00:02:01.341 --> 00:02:05.805
+The form shows the approved request, the allowed paths, and the
+checks.
+
+18
+00:02:08.041 --> 00:02:13.633
+The approved QA tests are a protected check. The coding agent
+gets only the interface note.
+
+19
+00:02:22.341 --> 00:02:28.461
+The card shows the exact attempt, the model, and the money
+limit: fifty cents for all rounds.
+
+20
+00:02:31.341 --> 00:02:33.957
+The AI Simulated User confirms it.
+
+21
+00:02:34.257 --> 00:02:38.937
+The run starts. The status, the checks, and the progress are at
+the top.
+
+22
+00:02:41.341 --> 00:02:44.461
+Live activity shows each step of the agent.
+
+23
+00:02:49.641 --> 00:02:54.705
+The agent changes the code, and Factory verifies it. The waiting
+time is cut.
+
+24
+00:02:58.941 --> 00:03:04.725
+The run ended and is verified. All thirty-five checks pass, and
+the scope is respected.
+
+25
+00:03:10.141 --> 00:03:16.453
+Each requirement shows the result of the check that covers it.
+Two are human checks, and wait for review.
+
+26
+00:03:21.041 --> 00:03:24.305
+It cost three cents, with sixteen requests.
+
+27
+00:03:28.408 --> 00:03:31.456
+Next, the Judge loop, on the run page.
+
+28
+00:03:34.208 --> 00:03:39.896
+The Judge scores the candidate. A low score starts a revision
+inside the approved limits.
+
+29
+00:03:47.208 --> 00:03:54.000
+The dialog shows the limits: minimum score four, at most two
+revisions, and a total limit of three dollars.
+
+30
+00:03:55.308 --> 00:04:00.372
+Factory shows the settings digest. The loop runs only inside
+these limits.
+
+31
+00:04:08.308 --> 00:04:11.620
+The AI Simulated User approves the bounded loop.
+
+32
+00:04:12.008 --> 00:04:16.712
+The loop starts. The Judge scores the first candidate on four
+dimensions.
+
+33
+00:04:18.808 --> 00:04:20.560
+The waiting time is cut here.
+
+34
+00:04:27.508 --> 00:04:36.820
+The loop is ready for review after round one. The scores are
+five, five, five, and five. All meet the minimum, so no revision
+was needed.
+
+35
+00:04:42.008 --> 00:04:46.952
+The loop never approves or merges. The Judge cost six tenths of
+a cent.
+
+36
+00:04:50.252 --> 00:04:55.748
+The review of the final candidate. The AI Simulated User opens
+it from the run page.
+
+37
+00:05:03.252 --> 00:05:07.308
+The review page lists the requirements, each with its check
+result.
+
+38
+00:05:08.152 --> 00:05:11.968
+It is an agent review, and it is not independent of the Judge.
+
+39
+00:05:29.152 --> 00:05:34.744
+A passing check is the evidence for its requirement. A human
+check needs its own verification.
+
+40
+00:05:39.052 --> 00:05:43.660
+The AI Simulated User marks the requirements that have evidence
+as met.
+
+41
+00:05:59.352 --> 00:06:12.048
+Requirements five and six are human checks. The run's
+screenshots show the Open and All lists, and one completion.
+They do not show the Overdue list with an open task, or an
+update without a reload.
+
+42
+00:06:26.152 --> 00:06:31.072
+The AI Simulated User saves a note for each, and leaves the
+review pending.
+
+43
+00:06:33.152 --> 00:06:38.552
+The review is pending. The AI Simulated User did not approve
+without the evidence.
+
+44
+00:06:44.719 --> 00:06:50.095
+Decision and publication. The review is pending, so there is
+nothing to approve.
+
+45
+00:06:52.519 --> 00:06:56.095
+No decision is recorded, so there is nothing to publish.
+
+46
+00:07:00.419 --> 00:07:04.643
+The saved notes are on the review. Factory needs the evidence
+first.
+
+47
+00:07:16.019 --> 00:07:20.771
+The run has no pull request. Nothing was published. The demo
+stops here.
+
+48
+00:07:24.286 --> 00:07:28.942
+The evidence of part three: the run, the Judge loop, and the
+review.
+
+49
+00:07:30.286 --> 00:07:36.334
+The total model cost of the whole recording was twenty-two
+cents, of the approved four dollars seventy.
+
+50
+00:07:37.786 --> 00:07:46.762
+The Judge loop needed no revision. Chapters thirteen and
+fourteen ended with a pending review. Nothing was published, and
+there is no finished feature.
+
+51
+00:07:47.886 --> 00:07:53.454
+The review is an agent review. The demo does not show that
+Factory saves engineering time.
+
+52
+00:07:54.786 --> 00:07:58.986
+The AI Simulated User was played by Claude Code at the owner's
+request.
