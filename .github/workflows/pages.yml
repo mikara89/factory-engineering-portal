@@ -27,6 +27,8 @@ jobs:
           - 8001:8000
     env:
       KROKI_SERVER_URL: http://localhost:8001
+      # Hides the MkDocs 2 notice of a plugin. requirements.txt pins MkDocs 1.6.1.
+      DISABLE_MKDOCS_2_WARNING: "true"
     steps:
       - name: Check out reviewed source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
